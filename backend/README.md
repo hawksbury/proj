@@ -23,15 +23,15 @@ If `OPENAI_API_KEY` is not set, the backend uses a local mock summary so the dem
 ## Routes
 
 - `GET /health`: API health check.
-- `POST /api/alert`: receive a live distress signal, compute composite priority score, and add to the live queue.
-- `GET /api/alerts`: return the current live queue sorted by priority score (max 50 alerts).
 - `POST /api/signals`: receive a device signal and create a timestamped signal event.
 - `GET /api/signals/:signal_id`: look up the customer connected to a device signal.
 - `POST /api/signal-events`: ingest a real-time signal into a deduplicated queue.
 - `GET /api/signal-events`: list queued/active/prioritized signal events.
 - `POST /api/signal-events/:event_id/process`: process one queued signal through ML, responder matching, and LLM summary.
 - `GET /api/responders`: list responder profiles for frontend login.
-- `POST /api/dispatch`: run the full ML dispatch flow.
+- `GET /api/responder-cases?responder_id=...`: list active/prioritized queue cases relevant to one responder.
+- `GET /api/ml/metrics`: return saved ML model metrics from `backend/ml/models/metrics.json`.
+- `POST /api/dispatch`: run the full dispatch flow.
 - `GET /api/dispatch/:signal_id`: quick demo route for the full dispatch flow.
 
 ## File Responsibilities
@@ -50,7 +50,7 @@ If `OPENAI_API_KEY` is not set, the backend uses a local mock summary so the dem
 ## Example Dispatch Request
 
 ```bash
-curl -s "http://127.0.0.1:4000/api/dispatch/SCRBS-0001?incident_type=power_outage"
+curl -s http://127.0.0.1:4000/api/dispatch/SIG-0000001?incident_type=power_outage
 ```
 
 ## Dispatch Flow

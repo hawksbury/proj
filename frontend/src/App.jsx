@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import { fetchResponderCases } from "./api/caseApi.js";
 import { fetchDispatch } from "./api/dispatchApi.js";
+import { fetchMlMetrics } from "./api/mlApi.js";
 import { fetchResponders } from "./api/responderApi.js";
 import { fetchAlerts } from "./api/alertApi.js";
 import SignalInput from "./components/SignalInput.jsx";
@@ -8,12 +10,13 @@ import DispatchSummary from "./components/DispatchSummary.jsx";
 import ResponderLogin from "./components/ResponderLogin.jsx";
 import ResponderCaseQueue from "./components/ResponderCaseQueue.jsx";
 import ResponderAnalytics from "./components/ResponderAnalytics.jsx";
+import OperationsOverview from "./components/OperationsOverview.jsx";
 import AlertQueue from "./components/AlertQueue.jsx";
 import LoginPage from "./components/LoginPage.jsx";
 import DispatchModal from "./components/DispatchModal.jsx";
-import { activeCases, responderProfiles as fallbackResponderProfiles } from "./data/responderCases.js";
 
 const DEFAULT_SIGNAL = "SCRBS-0001";
+const DEFAULT_INCIDENT = "power_outage";
 
 function playAlertSound(level = "medium") {
   try {
@@ -36,14 +39,6 @@ function playAlertSound(level = "medium") {
     });
   } catch (_) { /* audio blocked before first interaction */ }
 }
-const DEFAULT_INCIDENT = "power_outage";
-
-const modelMetrics = [
-  { label: "Escalation F1", value: "0.881", tone: "teal" },
-  { label: "Escalation ROC", value: "0.877", tone: "blue" },
-  { label: "Priority R2", value: "0.801", tone: "gold" },
-  { label: "Top-3 Match", value: "0.879", tone: "green" },
-];
 
 export default function App() {
   const [signalId, setSignalId] = useState(DEFAULT_SIGNAL);
@@ -51,10 +46,12 @@ export default function App() {
   const [dispatch, setDispatch] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [responderProfiles, setResponderProfiles] = useState(fallbackResponderProfiles);
+  const [responderProfiles, setResponderProfiles] = useState([]);
   const [selectedResponderId, setSelectedResponderId] = useState(
-    () => window.localStorage.getItem("ai-dispatch-responder-id") || fallbackResponderProfiles[0].responder_id,
+    () => window.localStorage.getItem("ai-dispatch-responder-id") || "",
   );
+  const [relevantCases, setRelevantCases] = useState([]);
+  const [metrics, setMetrics] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(
     () => window.localStorage.getItem("ai-dispatch-responder-id") !== null,
   );
@@ -83,28 +80,51 @@ export default function App() {
   }
 
   useEffect(() => {
-    loadDispatch(DEFAULT_SIGNAL, DEFAULT_INCIDENT);
-  }, []);
-
-  useEffect(() => {
     async function loadResponders() {
       try {
         const responders = await fetchResponders();
         if (responders.length) {
           setResponderProfiles(responders);
-          if (!responders.some((responder) => responder.responder_id === selectedResponderId)) {
+          const savedId = window.localStorage.getItem("ai-dispatch-responder-id");
+          if (!savedId || !responders.some((r) => r.responder_id === savedId)) {
             setSelectedResponderId(responders[0].responder_id);
           }
         }
-      } catch {
-        setResponderProfiles(fallbackResponderProfiles);
+      } catch (requestError) {
+        setError(requestError.message);
       }
     }
-
     loadResponders();
   }, []);
 
-  // Poll for new button alerts every 5 seconds
+  useEffect(() => {
+    async function loadMetrics() {
+      try {
+        setMetrics(await fetchMlMetrics());
+      } catch {
+        setMetrics(null);
+      }
+    }
+    loadMetrics();
+  }, []);
+
+  useEffect(() => {
+    async function loadRelevantCases() {
+      if (!isLoggedIn || !selectedResponder?.responder_id) return;
+      setError("");
+      try {
+        const cases = await fetchResponderCases(selectedResponder.responder_id);
+        setRelevantCases(cases);
+        if (!signalId && cases[0]) setSignalId(cases[0].signal_id);
+      } catch (requestError) {
+        setError(requestError.message);
+        setRelevantCases([]);
+      }
+    }
+    loadRelevantCases();
+  }, [isLoggedIn, selectedResponderId]);
+
+  // Poll for new button alerts every 3 seconds
   useEffect(() => {
     async function pollAlerts() {
       try {
@@ -112,24 +132,18 @@ export default function App() {
         const prevCount = knownAlertCountRef.current;
 
         if (incoming.length > prevCount) {
-          const numNew = incoming.length - prevCount;
           const newest = incoming[0];
           const name = newest.customer?.full_name || newest.person_id;
-
-          setNewAlertCount((n) => n + numNew);
-
+          setNewAlertCount((n) => n + (incoming.length - prevCount));
           clearTimeout(toastTimerRef.current);
           setToast(`New alert: ${name}`);
           toastTimerRef.current = setTimeout(() => setToast(null), 4500);
-
           playAlertSound(newest.priority?.level);
         }
 
         if (incoming.length !== knownAlertCountRef.current) {
           knownAlertCountRef.current = incoming.length;
           setAlerts(incoming);
-
-          // Auto-run dispatch for the top-priority alert
           const top = incoming[0];
           if (top?.customer?.signal_id) {
             setSignalId(top.customer.signal_id);
@@ -150,16 +164,10 @@ export default function App() {
   }, []);
 
   const selectedResponder = useMemo(
-    () => responderProfiles.find((responder) => responder.responder_id === selectedResponderId) || responderProfiles[0],
-    [selectedResponderId],
+    () => responderProfiles.find((r) => r.responder_id === selectedResponderId) || responderProfiles[0],
+    [selectedResponderId, responderProfiles],
   );
-  const relevantCases = useMemo(
-    () =>
-      activeCases
-        .filter((caseItem) => caseItem.recommended_profession === selectedResponder.profession)
-        .sort((a, b) => b.priority_score - a.priority_score),
-    [selectedResponder],
-  );
+  const modelMetrics = useMemo(() => buildModelMetrics(metrics), [metrics]);
   const dashboardStats = useMemo(
     () => buildDashboardStats(dispatch, relevantCases, selectedResponder),
     [dispatch, relevantCases, selectedResponder],
@@ -167,8 +175,8 @@ export default function App() {
 
   function handleCaseSelect(caseItem) {
     setSignalId(caseItem.signal_id);
-    setIncidentType(caseItem.incident_type);
-    loadDispatch(caseItem.signal_id, caseItem.incident_type);
+    setIncidentType(caseItem.incident_type || DEFAULT_INCIDENT);
+    loadDispatch(caseItem.signal_id, caseItem.incident_type || DEFAULT_INCIDENT);
   }
 
   function handleAlertSelect(alert) {
@@ -182,11 +190,13 @@ export default function App() {
   }
 
   function handleLogin(nextResponderId = selectedResponderId) {
+    window.localStorage.setItem("ai-dispatch-responder-id", nextResponderId);
     setSelectedResponderId(nextResponderId);
     setIsLoggedIn(true);
   }
 
   function handleLogout() {
+    window.localStorage.removeItem("ai-dispatch-responder-id");
     setIsLoggedIn(false);
   }
 
@@ -221,9 +231,7 @@ export default function App() {
         </div>
       </header>
 
-      <ResponderLogin
-        responder={selectedResponder}
-      />
+      <ResponderLogin responder={selectedResponder} />
 
       <SignalInput
         signalId={signalId}
@@ -260,8 +268,13 @@ export default function App() {
           onSelectCase={handleCaseSelect}
           loading={loading}
         />
-        <PriorityDashboard dispatch={dispatch} modelMetrics={modelMetrics} />
-        <DispatchSummary summary={dispatch?.dispatch_summary} />
+        <OperationsOverview cases={relevantCases} selectedSignalId={signalId} />
+        <DispatchSummary
+          cases={relevantCases}
+          responder={selectedResponder}
+          selectedSignalId={signalId}
+          summary={dispatch?.dispatch_summary}
+        />
       </section>
 
       {toast && (
@@ -282,36 +295,56 @@ export default function App() {
 }
 
 function buildDashboardStats(dispatch, relevantCases, selectedResponder) {
+  const selectedCase = relevantCases.find((c) => c.signal_id === dispatch?.signal?.signal_id) || relevantCases[0];
   const score = dispatch?.prediction?.priority_score ?? 0;
   const responders = dispatch?.responder_options || [];
   const nearest = responders[0]?.distance_miles ?? 0;
-  const probability = Math.round((dispatch?.prediction?.escalation_probability ?? 0) * 100);
-  const critical = relevantCases.filter((caseItem) => caseItem.priority_score >= 85).length;
+  const probability = Math.round((dispatch?.prediction?.escalation_probability ?? selectedCase?.escalation_probability / 100 ?? 0) * 100);
+  const critical = relevantCases.filter((c) => c.priority_score >= 85).length;
+  const selectedScore = score || selectedCase?.priority_score || 0;
+  const selectedProbability = probability || selectedCase?.escalation_probability || 0;
 
   return [
     {
       label: "Relevant Cases",
       value: relevantCases.length || "--",
-      detail: selectedResponder.profession,
-      spark: "86%",
+      detail: selectedResponder?.profession || "loading responders",
+      spark: `${Math.min(95, Math.max(18, relevantCases.length * 16))}%`,
     },
     {
       label: "Critical Now",
       value: critical || "--",
       detail: "sorted by ML priority",
-      spark: "74%",
+      spark: `${Math.min(95, Math.max(18, critical * 24))}%`,
     },
     {
       label: "Selected Priority",
-      value: score ? score.toFixed(1) : "--",
-      detail: dispatch?.prediction?.priority_level?.toUpperCase() || "WAITING",
-      spark: "64%",
+      value: selectedScore ? selectedScore.toFixed(1) : "--",
+      detail: dispatch?.prediction?.priority_level?.toUpperCase() || selectedCase?.priority_level?.toUpperCase() || "WAITING",
+      spark: `${Math.min(95, Math.max(18, selectedScore))}%`,
     },
     {
       label: "Selected Escalation",
-      value: `${probability}%`,
+      value: `${selectedProbability}%`,
       detail: nearest ? `${nearest} mi closest` : "waiting on responder match",
-      spark: "52%",
+      spark: `${Math.min(95, Math.max(18, selectedProbability))}%`,
     },
+  ];
+}
+
+function buildModelMetrics(metrics) {
+  if (!metrics?.models) {
+    return [
+      { label: "Escalation F1", value: "--", tone: "teal" },
+      { label: "Escalation ROC", value: "--", tone: "blue" },
+      { label: "Priority R2", value: "--", tone: "gold" },
+      { label: "Top-3 Match", value: "--", tone: "green" },
+    ];
+  }
+  return [
+    { label: "Escalation F1", value: metrics.models.escalation_required.f1.toFixed(3), tone: "teal" },
+    { label: "Escalation ROC", value: metrics.models.escalation_required.roc_auc.toFixed(3), tone: "blue" },
+    { label: "Priority R2", value: metrics.models.priority_score_assigned.r2.toFixed(3), tone: "gold" },
+    { label: "Top-3 Match", value: metrics.models.matched_responder_profession.top_3_accuracy.toFixed(3), tone: "green" },
   ];
 }
