@@ -1,0 +1,22 @@
+{
+  "backend_lookup_flow": [
+    "Receive signal_id from device/tag.",
+    "Create received_at timestamp in backend.",
+    "Find customer by customers.signal_id.",
+    "Combine customer needs with disaster_zones, shelters, and responder availability.",
+    "Run prioritization model and responder matching model.",
+    "Show AI dispatch dashboard with ranked cases and responder assignment options."
+  ],
+  "files": {
+    "customers.csv": "Fake disabled/customer registry. signal_id is the device id and maps directly to customer_id.",
+    "responders.csv": "First responders, professions, certifications, location, availability, vehicle, and capability columns.",
+    "disaster_zones.csv": "Simulated real-world incident context that the model can use for risk scoring.",
+    "shelters.csv": "Shelter capacity and accessibility resources.",
+    "historical_cases.csv": "Large training/testing set for prediction experiments and accuracy checks."
+  },
+  "recommended_targets": {
+    "priority_prediction_label": "historical_cases.priority_score_assigned or escalation_required",
+    "responder_matching_label": "historical_cases.matched_responder_profession",
+    "lookup_key": "customers.signal_id"
+  }
+}

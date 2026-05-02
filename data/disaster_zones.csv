@@ -1,0 +1,181 @@
+zone_id,city,state,incident_type,severity_level,center_latitude,center_longitude,radius_miles,power_outage,road_access,cell_service_quality,shelter_capacity_pressure,updated_at
+ZONE-0001,Dallas,TX,extreme_heat,5,32.908819,-96.848581,6.4,true,blocked,good,medium,2026-05-03T11:50:00-05:00
+ZONE-0002,Jackson,MS,power_outage,6,32.388463,-90.046035,5.2,true,blocked,poor,overflow,2026-05-02T13:57:00-05:00
+ZONE-0003,Jackson,MS,wildfire_smoke,5,32.136177,-90.329854,11.9,true,blocked,good,high,2026-05-02T01:55:00-05:00
+ZONE-0004,Austin,TX,flood,2,30.418266,-97.816026,3.7,false,limited,good,medium,2026-05-02T21:53:00-05:00
+ZONE-0005,Austin,TX,extreme_heat,3,30.253096,-97.641396,8.5,false,blocked,good,overflow,2026-05-02T17:44:00-05:00
+ZONE-0006,Jackson,MS,extreme_heat,4,32.413352,-90.039109,3.8,true,blocked,offline,low,2026-05-01T18:35:00-05:00
+ZONE-0007,Jackson,MS,chemical_spill,5,32.345422,-89.997457,7.6,true,unknown,offline,overflow,2026-05-03T17:45:00-05:00
+ZONE-0008,Jackson,MS,tornado_damage,4,32.242656,-90.374985,2.3,true,limited,poor,overflow,2026-05-02T03:19:00-05:00
+ZONE-0009,Mobile,AL,tornado_damage,1,30.624547,-88.04457,2.1,true,blocked,poor,overflow,2026-05-01T10:45:00-05:00
+ZONE-0010,Jackson,MS,power_outage,4,32.469118,-90.090457,6.3,true,blocked,offline,overflow,2026-05-02T06:48:00-05:00
+ZONE-0011,Dallas,TX,flood,5,32.648293,-96.909442,11.8,true,open,poor,low,2026-05-01T10:11:00-05:00
+ZONE-0012,Austin,TX,wildfire_smoke,5,30.212854,-97.776748,1.8,false,blocked,degraded,high,2026-05-03T11:04:00-05:00
+ZONE-0013,Mobile,AL,extreme_heat,2,30.62848,-87.972839,9.3,false,limited,good,high,2026-05-02T13:15:00-05:00
+ZONE-0014,Dallas,TX,wildfire_smoke,5,32.788885,-96.680547,1.7,false,unknown,poor,low,2026-05-02T20:43:00-05:00
+ZONE-0015,New Orleans,LA,power_outage,5,29.891174,-90.146156,8.5,true,unknown,degraded,low,2026-05-02T20:36:00-05:00
+ZONE-0016,Austin,TX,wildfire_smoke,3,30.159931,-97.850496,4.7,true,unknown,degraded,medium,2026-05-02T06:22:00-05:00
+ZONE-0017,San Antonio,TX,tornado_damage,5,29.454088,-98.579986,1.1,false,blocked,poor,medium,2026-05-01T08:28:00-05:00
+ZONE-0018,Austin,TX,power_outage,5,30.187132,-97.674656,7.6,true,blocked,offline,overflow,2026-05-01T23:55:00-05:00
+ZONE-0019,San Antonio,TX,chemical_spill,2,29.406846,-98.401922,9.3,false,limited,offline,high,2026-05-02T01:26:00-05:00
+ZONE-0020,Jackson,MS,power_outage,4,32.48179,-90.34992,4.7,true,unknown,poor,low,2026-05-03T18:38:00-05:00
+ZONE-0021,Baton Rouge,LA,power_outage,5,30.407841,-91.148754,4.5,false,blocked,offline,overflow,2026-05-01T20:43:00-05:00
+ZONE-0022,New Orleans,LA,power_outage,2,29.944724,-90.058101,11.1,true,blocked,good,high,2026-05-01T08:19:00-05:00
+ZONE-0023,Houston,TX,winter_storm,2,29.6314,-95.391916,9.5,false,open,good,medium,2026-05-03T19:48:00-05:00
+ZONE-0024,Jackson,MS,power_outage,5,32.28631,-90.007295,10.7,true,unknown,offline,medium,2026-05-02T06:54:00-05:00
+ZONE-0025,Dallas,TX,wildfire_smoke,2,32.719841,-96.883621,1.3,false,unknown,degraded,high,2026-05-02T06:28:00-05:00
+ZONE-0026,San Antonio,TX,winter_storm,4,29.431637,-98.333951,11.9,true,blocked,good,high,2026-05-03T02:02:00-05:00
+ZONE-0027,Houston,TX,tornado_damage,5,29.940547,-95.384958,6.7,false,blocked,offline,medium,2026-05-02T08:58:00-05:00
+ZONE-0028,New Orleans,LA,tornado_damage,4,29.937021,-90.131295,7.7,true,limited,poor,overflow,2026-05-03T16:52:00-05:00
+ZONE-0029,San Antonio,TX,flood,4,29.458896,-98.581153,1.2,false,open,good,medium,2026-05-02T12:47:00-05:00
+ZONE-0030,Dallas,TX,tornado_damage,3,32.855247,-96.809728,8.7,true,open,poor,high,2026-05-01T21:24:00-05:00
+ZONE-0031,Houston,TX,chemical_spill,4,29.66967,-95.401283,4.8,true,limited,poor,low,2026-05-01T22:25:00-05:00
+ZONE-0032,Dallas,TX,tornado_damage,5,32.808562,-96.830488,9.9,true,blocked,poor,low,2026-05-02T02:58:00-05:00
+ZONE-0033,Jackson,MS,power_outage,4,32.116556,-90.214124,2,false,unknown,good,overflow,2026-05-01T03:52:00-05:00
+ZONE-0034,New Orleans,LA,flood,3,30.056315,-90.077787,4.5,true,open,degraded,overflow,2026-05-02T15:54:00-05:00
+ZONE-0035,New Orleans,LA,power_outage,6,29.840054,-90.043431,7.8,true,open,offline,overflow,2026-05-02T11:58:00-05:00
+ZONE-0036,Dallas,TX,chemical_spill,2,32.931458,-96.71257,5.1,false,open,offline,medium,2026-05-02T06:06:00-05:00
+ZONE-0037,Jackson,MS,power_outage,6,32.438966,-90.257214,10.1,true,open,offline,low,2026-05-02T20:15:00-05:00
+ZONE-0038,San Antonio,TX,flood,5,29.457926,-98.503786,4.6,true,limited,poor,medium,2026-05-03T10:38:00-05:00
+ZONE-0039,Houston,TX,chemical_spill,6,29.868578,-95.327007,11.2,false,limited,good,medium,2026-05-01T08:34:00-05:00
+ZONE-0040,New Orleans,LA,flood,6,29.755287,-90.050874,8.9,false,limited,degraded,medium,2026-05-02T12:59:00-05:00
+ZONE-0041,Dallas,TX,tornado_damage,5,32.880487,-96.98747,8.4,true,limited,good,high,2026-05-02T16:05:00-05:00
+ZONE-0042,San Antonio,TX,flood,5,29.331733,-98.516131,7.9,true,blocked,good,overflow,2026-05-01T13:43:00-05:00
+ZONE-0043,Baton Rouge,LA,tornado_damage,5,30.543074,-91.322963,3.6,true,limited,offline,high,2026-05-02T03:06:00-05:00
+ZONE-0044,Dallas,TX,tornado_damage,6,32.719761,-96.847628,10.5,true,limited,degraded,high,2026-05-02T03:38:00-05:00
+ZONE-0045,Austin,TX,chemical_spill,5,30.176629,-97.735253,7.5,true,unknown,poor,low,2026-05-01T12:55:00-05:00
+ZONE-0046,Houston,TX,flood,5,29.715954,-95.229623,6,true,unknown,good,overflow,2026-05-02T23:29:00-05:00
+ZONE-0047,Austin,TX,winter_storm,4,30.225547,-97.574056,1.6,true,unknown,good,high,2026-05-01T13:47:00-05:00
+ZONE-0048,Jackson,MS,wildfire_smoke,1,32.194699,-90.327284,11.1,true,blocked,good,high,2026-05-02T12:46:00-05:00
+ZONE-0049,Austin,TX,power_outage,5,30.104351,-97.934132,2.8,true,unknown,good,medium,2026-05-02T01:26:00-05:00
+ZONE-0050,Mobile,AL,winter_storm,2,30.571971,-87.862165,7.4,false,limited,degraded,high,2026-05-02T02:37:00-05:00
+ZONE-0051,Mobile,AL,winter_storm,4,30.589471,-87.959027,10.1,false,unknown,degraded,overflow,2026-05-02T04:57:00-05:00
+ZONE-0052,San Antonio,TX,wildfire_smoke,4,29.582517,-98.686887,12,false,open,offline,overflow,2026-05-02T22:33:00-05:00
+ZONE-0053,San Antonio,TX,winter_storm,4,29.566579,-98.460887,1.7,false,open,good,low,2026-05-01T04:02:00-05:00
+ZONE-0054,Houston,TX,flood,3,29.936482,-95.453476,3.3,false,unknown,good,high,2026-05-03T03:30:00-05:00
+ZONE-0055,Houston,TX,chemical_spill,1,29.627035,-95.205643,7,false,open,poor,high,2026-05-02T18:05:00-05:00
+ZONE-0056,Austin,TX,chemical_spill,4,30.341904,-97.66893,9.9,true,open,degraded,overflow,2026-05-03T00:12:00-05:00
+ZONE-0057,Dallas,TX,power_outage,5,32.726584,-96.761944,8.3,true,open,offline,medium,2026-05-02T16:33:00-05:00
+ZONE-0058,Mobile,AL,power_outage,5,30.805856,-88.014676,2.2,true,blocked,poor,medium,2026-05-03T11:17:00-05:00
+ZONE-0059,Austin,TX,tornado_damage,4,30.184773,-97.843675,9.6,false,unknown,degraded,low,2026-05-02T12:25:00-05:00
+ZONE-0060,Dallas,TX,winter_storm,3,32.964922,-96.943839,10.7,true,blocked,poor,high,2026-05-03T09:42:00-05:00
+ZONE-0061,Jackson,MS,tornado_damage,6,32.423582,-90.353211,7.5,false,unknown,good,overflow,2026-05-01T09:35:00-05:00
+ZONE-0062,Houston,TX,extreme_heat,1,29.856444,-95.198361,10,false,unknown,offline,medium,2026-05-03T12:41:00-05:00
+ZONE-0063,Baton Rouge,LA,wildfire_smoke,3,30.311541,-91.142737,6.3,false,blocked,poor,overflow,2026-05-02T20:53:00-05:00
+ZONE-0064,Dallas,TX,winter_storm,3,32.749585,-96.702446,10.3,true,blocked,poor,low,2026-05-03T19:22:00-05:00
+ZONE-0065,Baton Rouge,LA,chemical_spill,3,30.456795,-90.989172,3.7,true,limited,poor,overflow,2026-05-03T06:38:00-05:00
+ZONE-0066,Houston,TX,wildfire_smoke,4,29.89929,-95.326357,6.8,true,limited,good,high,2026-05-02T00:29:00-05:00
+ZONE-0067,Jackson,MS,power_outage,2,32.413478,-90.197252,1.2,false,unknown,poor,high,2026-05-03T19:42:00-05:00
+ZONE-0068,Houston,TX,chemical_spill,2,29.910866,-95.199195,6.5,false,blocked,good,high,2026-05-02T06:28:00-05:00
+ZONE-0069,Dallas,TX,wildfire_smoke,6,32.75173,-96.693659,11,true,unknown,poor,high,2026-05-02T16:25:00-05:00
+ZONE-0070,New Orleans,LA,power_outage,4,29.892494,-90.096168,9.8,false,open,poor,low,2026-05-03T22:55:00-05:00
+ZONE-0071,Houston,TX,extreme_heat,1,29.675013,-95.468786,5.7,true,unknown,good,medium,2026-05-03T11:55:00-05:00
+ZONE-0072,Austin,TX,power_outage,2,30.367782,-97.600831,6.5,false,unknown,good,low,2026-05-02T04:22:00-05:00
+ZONE-0073,New Orleans,LA,winter_storm,3,29.909224,-89.937686,11.7,true,limited,poor,overflow,2026-05-02T13:17:00-05:00
+ZONE-0074,Baton Rouge,LA,chemical_spill,2,30.493684,-91.184495,5.4,false,unknown,good,medium,2026-05-02T11:54:00-05:00
+ZONE-0075,Jackson,MS,tornado_damage,2,32.30966,-90.186912,1.1,true,limited,poor,medium,2026-05-02T13:17:00-05:00
+ZONE-0076,Jackson,MS,extreme_heat,3,32.468307,-90.073529,9,false,blocked,poor,low,2026-05-03T22:02:00-05:00
+ZONE-0077,Austin,TX,extreme_heat,5,30.285,-97.882275,3,true,limited,degraded,low,2026-05-02T10:10:00-05:00
+ZONE-0078,New Orleans,LA,flood,2,29.796533,-90.190656,4,false,limited,poor,low,2026-05-02T11:28:00-05:00
+ZONE-0079,Austin,TX,chemical_spill,6,30.176553,-97.641735,11.1,true,blocked,degraded,overflow,2026-05-01T06:35:00-05:00
+ZONE-0080,Jackson,MS,power_outage,3,32.282869,-90.346597,10.1,true,blocked,poor,high,2026-05-01T01:32:00-05:00
+ZONE-0081,Houston,TX,extreme_heat,1,29.900098,-95.357725,4,false,open,degraded,overflow,2026-05-02T16:36:00-05:00
+ZONE-0082,San Antonio,TX,winter_storm,2,29.519988,-98.595068,7.5,false,blocked,degraded,overflow,2026-05-02T16:51:00-05:00
+ZONE-0083,Houston,TX,winter_storm,4,29.931275,-95.338545,3,false,blocked,offline,medium,2026-05-03T00:35:00-05:00
+ZONE-0084,Dallas,TX,tornado_damage,5,32.75356,-96.889123,7.5,true,open,good,overflow,2026-05-02T11:13:00-05:00
+ZONE-0085,San Antonio,TX,wildfire_smoke,4,29.405309,-98.493185,2.2,false,unknown,degraded,medium,2026-05-02T19:56:00-05:00
+ZONE-0086,Jackson,MS,tornado_damage,4,32.154644,-90.169543,11.4,true,open,poor,medium,2026-05-03T06:26:00-05:00
+ZONE-0087,Jackson,MS,tornado_damage,1,32.303923,-90.370443,5.2,false,unknown,good,medium,2026-05-01T02:25:00-05:00
+ZONE-0088,New Orleans,LA,chemical_spill,2,29.780142,-90.248305,0.9,false,limited,degraded,medium,2026-05-01T14:22:00-05:00
+ZONE-0089,San Antonio,TX,extreme_heat,2,29.292187,-98.626366,1.8,false,unknown,poor,overflow,2026-05-03T20:35:00-05:00
+ZONE-0090,Austin,TX,chemical_spill,3,30.407524,-97.586535,8.5,false,unknown,offline,low,2026-05-01T15:01:00-05:00
+ZONE-0091,Baton Rouge,LA,power_outage,6,30.541667,-91.162187,2.2,true,blocked,offline,high,2026-05-02T03:35:00-05:00
+ZONE-0092,Dallas,TX,tornado_damage,4,32.813671,-96.688209,1.1,false,unknown,poor,overflow,2026-05-02T06:52:00-05:00
+ZONE-0093,Houston,TX,chemical_spill,4,29.779969,-95.173261,10.3,true,blocked,offline,low,2026-05-03T05:58:00-05:00
+ZONE-0094,Baton Rouge,LA,extreme_heat,4,30.518217,-90.990405,7.9,true,open,offline,medium,2026-05-03T02:25:00-05:00
+ZONE-0095,Jackson,MS,chemical_spill,2,32.147351,-90.323405,1.8,false,blocked,good,high,2026-05-03T10:20:00-05:00
+ZONE-0096,Houston,TX,wildfire_smoke,4,29.869297,-95.364118,8.1,false,unknown,good,overflow,2026-05-01T23:55:00-05:00
+ZONE-0097,Baton Rouge,LA,tornado_damage,3,30.334761,-91.131096,5.8,true,limited,degraded,low,2026-05-03T20:45:00-05:00
+ZONE-0098,Baton Rouge,LA,tornado_damage,6,30.326612,-91.326635,6.7,true,open,degraded,medium,2026-05-03T15:25:00-05:00
+ZONE-0099,Jackson,MS,wildfire_smoke,6,32.410076,-90.318943,3.6,false,open,poor,overflow,2026-05-02T19:04:00-05:00
+ZONE-0100,Baton Rouge,LA,tornado_damage,3,30.649504,-91.148913,9.5,true,unknown,poor,overflow,2026-05-02T19:53:00-05:00
+ZONE-0101,Houston,TX,flood,3,29.721445,-95.448593,1.8,true,unknown,good,low,2026-05-02T01:52:00-05:00
+ZONE-0102,Austin,TX,wildfire_smoke,5,30.342788,-97.667565,3.1,false,limited,good,high,2026-05-03T22:15:00-05:00
+ZONE-0103,Houston,TX,tornado_damage,2,29.561338,-95.477669,1.9,false,blocked,good,overflow,2026-05-01T18:33:00-05:00
+ZONE-0104,Baton Rouge,LA,tornado_damage,3,30.329512,-91.152738,10.9,true,blocked,good,overflow,2026-05-02T07:52:00-05:00
+ZONE-0105,Austin,TX,tornado_damage,2,30.074446,-97.903774,6.2,false,limited,offline,high,2026-05-02T02:16:00-05:00
+ZONE-0106,Dallas,TX,tornado_damage,2,32.855409,-96.990676,6.1,true,open,degraded,low,2026-05-02T02:24:00-05:00
+ZONE-0107,New Orleans,LA,extreme_heat,3,30.116342,-90.242408,1.7,false,unknown,poor,overflow,2026-05-02T23:49:00-05:00
+ZONE-0108,Austin,TX,flood,2,30.13482,-97.6619,7.4,false,unknown,poor,low,2026-05-01T13:39:00-05:00
+ZONE-0109,Mobile,AL,chemical_spill,2,30.675713,-88.051358,6.8,false,limited,offline,high,2026-05-02T09:53:00-05:00
+ZONE-0110,Jackson,MS,wildfire_smoke,5,32.464266,-90.083991,9.7,false,limited,poor,overflow,2026-05-02T07:33:00-05:00
+ZONE-0111,San Antonio,TX,tornado_damage,1,29.616266,-98.608352,2.3,false,open,offline,overflow,2026-05-03T21:26:00-05:00
+ZONE-0112,New Orleans,LA,chemical_spill,2,29.761124,-90.075653,3.8,false,unknown,poor,high,2026-05-03T07:57:00-05:00
+ZONE-0113,Austin,TX,power_outage,2,30.096477,-97.65371,5.8,false,limited,poor,low,2026-05-02T18:13:00-05:00
+ZONE-0114,Austin,TX,tornado_damage,2,30.220134,-97.761631,5.8,false,open,degraded,low,2026-05-01T05:31:00-05:00
+ZONE-0115,Baton Rouge,LA,winter_storm,3,30.589512,-91.04618,0.9,true,limited,poor,medium,2026-05-01T20:41:00-05:00
+ZONE-0116,New Orleans,LA,chemical_spill,5,30.064858,-89.877416,11.5,true,blocked,degraded,medium,2026-05-02T14:12:00-05:00
+ZONE-0117,Austin,TX,extreme_heat,1,30.163411,-97.918785,10.5,false,limited,degraded,high,2026-05-02T20:48:00-05:00
+ZONE-0118,Baton Rouge,LA,power_outage,5,30.263365,-91.075485,0.6,false,limited,offline,medium,2026-05-02T22:42:00-05:00
+ZONE-0119,Houston,TX,winter_storm,5,29.959999,-95.395564,11.7,true,blocked,offline,medium,2026-05-02T13:08:00-05:00
+ZONE-0120,Baton Rouge,LA,flood,2,30.412619,-91.049777,7.8,false,unknown,good,medium,2026-05-02T15:14:00-05:00
+ZONE-0121,Austin,TX,power_outage,4,30.083162,-97.621422,8.8,true,open,good,high,2026-05-02T13:15:00-05:00
+ZONE-0122,Mobile,AL,extreme_heat,5,30.887902,-88.171532,9.6,false,blocked,degraded,medium,2026-05-03T11:41:00-05:00
+ZONE-0123,Baton Rouge,LA,power_outage,3,30.313347,-91.119884,8.9,false,limited,degraded,low,2026-05-02T06:12:00-05:00
+ZONE-0124,Mobile,AL,wildfire_smoke,3,30.785817,-88.200531,10.3,true,unknown,poor,overflow,2026-05-03T07:46:00-05:00
+ZONE-0125,Jackson,MS,power_outage,5,32.1932,-90.124328,3,true,unknown,poor,high,2026-05-01T11:51:00-05:00
+ZONE-0126,New Orleans,LA,winter_storm,4,29.865933,-90.117981,1,false,unknown,offline,medium,2026-05-02T09:35:00-05:00
+ZONE-0127,New Orleans,LA,flood,3,29.903096,-89.873324,2.8,true,open,degraded,overflow,2026-05-01T02:58:00-05:00
+ZONE-0128,Baton Rouge,LA,power_outage,3,30.309805,-91.1729,5,false,unknown,poor,medium,2026-05-01T13:35:00-05:00
+ZONE-0129,Jackson,MS,extreme_heat,2,32.14523,-90.332815,10.5,true,blocked,good,medium,2026-05-02T14:33:00-05:00
+ZONE-0130,Jackson,MS,power_outage,5,32.478355,-90.211262,11.4,true,limited,offline,low,2026-05-01T00:21:00-05:00
+ZONE-0131,Houston,TX,extreme_heat,5,29.692127,-95.243086,0.7,true,blocked,poor,high,2026-05-02T19:17:00-05:00
+ZONE-0132,Dallas,TX,extreme_heat,4,32.965136,-96.650989,1,false,limited,poor,medium,2026-05-02T01:11:00-05:00
+ZONE-0133,San Antonio,TX,flood,6,29.299118,-98.438931,6.5,false,unknown,degraded,overflow,2026-05-02T13:11:00-05:00
+ZONE-0134,Austin,TX,flood,4,30.223188,-97.623136,6.1,true,limited,good,high,2026-05-01T19:31:00-05:00
+ZONE-0135,San Antonio,TX,tornado_damage,6,29.282512,-98.316078,10.3,true,blocked,poor,low,2026-05-02T17:46:00-05:00
+ZONE-0136,San Antonio,TX,flood,4,29.536797,-98.630826,2.9,false,limited,degraded,medium,2026-05-02T11:12:00-05:00
+ZONE-0137,Dallas,TX,flood,2,32.94919,-96.718543,10.7,false,limited,good,high,2026-05-01T06:05:00-05:00
+ZONE-0138,Houston,TX,chemical_spill,3,29.863593,-95.188352,0.9,true,unknown,offline,high,2026-05-02T12:35:00-05:00
+ZONE-0139,Austin,TX,wildfire_smoke,3,30.41396,-97.913817,5.3,true,unknown,degraded,overflow,2026-05-03T16:37:00-05:00
+ZONE-0140,New Orleans,LA,extreme_heat,5,29.862376,-90.176942,6.7,true,blocked,poor,low,2026-05-03T22:25:00-05:00
+ZONE-0141,Baton Rouge,LA,flood,4,30.276837,-91.252303,11.8,true,open,good,high,2026-05-01T16:28:00-05:00
+ZONE-0142,Jackson,MS,winter_storm,4,32.379345,-90.166125,12,true,open,good,medium,2026-05-02T11:17:00-05:00
+ZONE-0143,Dallas,TX,tornado_damage,5,32.738806,-96.882118,4.1,true,limited,poor,overflow,2026-05-02T18:53:00-05:00
+ZONE-0144,San Antonio,TX,tornado_damage,3,29.381899,-98.295721,11,true,unknown,good,high,2026-05-03T09:08:00-05:00
+ZONE-0145,Jackson,MS,wildfire_smoke,3,32.102591,-90.09618,5.2,false,blocked,degraded,high,2026-05-01T11:12:00-05:00
+ZONE-0146,Mobile,AL,chemical_spill,2,30.699405,-87.906469,1.4,false,blocked,degraded,low,2026-05-02T13:26:00-05:00
+ZONE-0147,Baton Rouge,LA,winter_storm,3,30.428084,-91.047888,2.6,false,limited,good,medium,2026-05-03T15:53:00-05:00
+ZONE-0148,Jackson,MS,tornado_damage,2,32.374603,-90.057501,6,false,limited,degraded,high,2026-05-01T14:07:00-05:00
+ZONE-0149,Houston,TX,wildfire_smoke,4,29.777818,-95.401277,6.8,true,open,poor,low,2026-05-01T23:54:00-05:00
+ZONE-0150,Dallas,TX,flood,3,32.88105,-96.933936,9.1,true,limited,good,overflow,2026-05-02T06:06:00-05:00
+ZONE-0151,Mobile,AL,flood,4,30.814848,-87.919104,11.4,true,blocked,offline,overflow,2026-05-02T22:04:00-05:00
+ZONE-0152,San Antonio,TX,power_outage,3,29.336882,-98.458051,8.3,false,unknown,offline,overflow,2026-05-02T04:49:00-05:00
+ZONE-0153,New Orleans,LA,extreme_heat,3,30.069073,-89.880092,11.3,false,open,degraded,low,2026-05-03T13:30:00-05:00
+ZONE-0154,San Antonio,TX,flood,3,29.567701,-98.462018,2.7,false,unknown,degraded,medium,2026-05-02T18:11:00-05:00
+ZONE-0155,Baton Rouge,LA,chemical_spill,3,30.304277,-91.323609,11.3,true,open,degraded,high,2026-05-02T00:49:00-05:00
+ZONE-0156,Houston,TX,power_outage,5,29.898464,-95.186379,3.1,true,unknown,degraded,medium,2026-05-03T04:22:00-05:00
+ZONE-0157,New Orleans,LA,power_outage,5,29.781871,-90.013688,6.2,true,blocked,good,overflow,2026-05-03T19:32:00-05:00
+ZONE-0158,San Antonio,TX,power_outage,4,29.27001,-98.30496,8.9,true,limited,degraded,high,2026-05-03T07:45:00-05:00
+ZONE-0159,Houston,TX,tornado_damage,4,29.564225,-95.305278,3.6,true,blocked,offline,high,2026-05-02T11:07:00-05:00
+ZONE-0160,Baton Rouge,LA,winter_storm,2,30.422267,-91.046434,7.9,false,blocked,good,high,2026-05-02T09:03:00-05:00
+ZONE-0161,Austin,TX,extreme_heat,4,30.163026,-97.768899,3.9,true,open,poor,overflow,2026-05-02T11:05:00-05:00
+ZONE-0162,Baton Rouge,LA,power_outage,2,30.350643,-91.319428,6,true,blocked,poor,low,2026-05-02T21:46:00-05:00
+ZONE-0163,New Orleans,LA,tornado_damage,4,30.03636,-90.10641,10,false,open,poor,low,2026-05-02T21:57:00-05:00
+ZONE-0164,Mobile,AL,extreme_heat,3,30.539477,-88.080732,10.2,true,open,good,medium,2026-05-02T21:14:00-05:00
+ZONE-0165,Baton Rouge,LA,tornado_damage,2,30.451505,-91.028637,1.6,true,blocked,offline,medium,2026-05-03T12:51:00-05:00
+ZONE-0166,San Antonio,TX,power_outage,4,29.407523,-98.299189,10.1,false,open,poor,overflow,2026-05-02T16:49:00-05:00
+ZONE-0167,Baton Rouge,LA,tornado_damage,6,30.386045,-91.037286,7.4,false,blocked,degraded,overflow,2026-05-02T19:29:00-05:00
+ZONE-0168,New Orleans,LA,tornado_damage,2,30.06321,-89.971876,8.7,true,open,degraded,high,2026-05-02T13:16:00-05:00
+ZONE-0169,New Orleans,LA,winter_storm,2,30.132545,-90.186648,11.3,false,limited,good,high,2026-05-02T02:01:00-05:00
+ZONE-0170,Houston,TX,extreme_heat,5,29.743273,-95.492749,10.1,true,open,good,low,2026-05-03T19:17:00-05:00
+ZONE-0171,Jackson,MS,winter_storm,4,32.102506,-90.383556,3.7,true,open,degraded,high,2026-05-02T04:24:00-05:00
+ZONE-0172,Jackson,MS,winter_storm,3,32.304402,-90.191803,10.3,true,limited,degraded,low,2026-05-01T20:46:00-05:00
+ZONE-0173,Mobile,AL,flood,3,30.58289,-88.01526,3.5,false,limited,degraded,high,2026-05-03T23:41:00-05:00
+ZONE-0174,Austin,TX,flood,5,30.104012,-97.633805,9.4,false,limited,good,medium,2026-05-02T10:48:00-05:00
+ZONE-0175,Austin,TX,flood,3,30.197947,-97.727394,5,true,open,good,medium,2026-05-03T14:31:00-05:00
+ZONE-0176,Mobile,AL,wildfire_smoke,6,30.638076,-88.021919,9.5,true,open,offline,overflow,2026-05-03T08:49:00-05:00
+ZONE-0177,San Antonio,TX,chemical_spill,1,29.591489,-98.354883,6.5,false,unknown,poor,overflow,2026-05-01T08:11:00-05:00
+ZONE-0178,San Antonio,TX,winter_storm,1,29.410752,-98.676048,5.6,true,limited,offline,medium,2026-05-01T01:19:00-05:00
+ZONE-0179,Baton Rouge,LA,power_outage,6,30.375446,-91.100372,4.2,true,blocked,offline,medium,2026-05-02T00:14:00-05:00
+ZONE-0180,Mobile,AL,power_outage,4,30.696331,-87.864168,4.4,true,blocked,good,overflow,2026-05-02T20:36:00-05:00

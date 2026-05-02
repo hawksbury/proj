@@ -1,0 +1,47 @@
+{
+  "training_rows": 20000,
+  "features": [
+    "age",
+    "household_size",
+    "lives_alone",
+    "power_dependent_equipment",
+    "oxygen_dependent",
+    "service_animal",
+    "needs_accessible_transport",
+    "consent_to_share_with_responders",
+    "baseline_priority_score",
+    "received_hour",
+    "received_month",
+    "city",
+    "state",
+    "gender",
+    "primary_language",
+    "mobility_level",
+    "evacuation_assistance_level",
+    "incident_type",
+    "communication_needs",
+    "disability_types",
+    "medical_conditions",
+    "medications",
+    "equipment_dependencies"
+  ],
+  "models": {
+    "escalation_required": {
+      "accuracy": 0.8185,
+      "precision": 0.8771,
+      "recall": 0.8858,
+      "f1": 0.8814,
+      "roc_auc": 0.8766
+    },
+    "priority_score_assigned": {
+      "mae": 5.3776,
+      "rmse": 7.2495,
+      "r2": 0.8014
+    },
+    "matched_responder_profession": {
+      "accuracy": 0.3237,
+      "macro_f1": 0.35,
+      "top_3_accuracy": 0.8788
+    }
+  }
+}

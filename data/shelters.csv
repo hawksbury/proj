@@ -1,0 +1,221 @@
+shelter_id,name,city,state,latitude,longitude,total_capacity,available_beds,wheelchair_accessible,medical_staff_available,oxygen_available,pet_friendly,service_animals_supported,backup_power,languages_supported,intake_status
+SHEL-0001,East Arena Shelter,Baton Rouge,LA,30.61441,-91.296539,337,360,true,false,true,true,true,false,English|French,limited
+SHEL-0002,West Arena Shelter,Baton Rouge,LA,30.318636,-91.312401,870,167,false,false,false,true,true,false,Mandarin|Tagalog|English|Vietnamese,limited
+SHEL-0003,South High School Shelter,Jackson,MS,32.437677,-90.138375,368,233,true,true,false,true,true,false,Hindi|Spanish,limited
+SHEL-0004,West Community Center Shelter,Austin,TX,30.15417,-97.852693,700,368,true,false,true,false,true,true,French|Mandarin|Urdu,open
+SHEL-0005,East Civic Center Shelter,Houston,TX,29.653272,-95.248967,261,316,true,true,true,false,true,true,ASL|Urdu|Tagalog,limited
+SHEL-0006,Regional Church Shelter,Mobile,AL,30.859317,-88.102678,675,362,false,false,false,false,true,true,ASL|Hindi,full
+SHEL-0007,North High School Shelter,Dallas,TX,32.62132,-96.670887,711,175,true,false,false,false,true,true,English,medical_only
+SHEL-0008,Community Arena Shelter,Austin,TX,30.21055,-97.648158,368,320,true,false,true,false,true,true,English|Arabic|Spanish,full
+SHEL-0009,Regional Civic Center Shelter,Austin,TX,30.207555,-97.893484,538,6,true,true,false,true,true,false,Urdu,full
+SHEL-0010,West Church Shelter,Mobile,AL,30.852192,-87.917588,623,261,true,false,false,false,true,false,Hindi|Spanish|ASL,open
+SHEL-0011,North Arena Shelter,New Orleans,LA,29.831839,-90.222428,456,64,true,true,false,false,true,true,Arabic,medical_only
+SHEL-0012,East High School Shelter,Austin,TX,30.417374,-97.88656,360,144,false,false,false,false,true,false,Mandarin,medical_only
+SHEL-0013,North Clinic Shelter,Houston,TX,29.616448,-95.443158,373,187,true,true,false,true,true,false,Tagalog|Spanish|Urdu,limited
+SHEL-0014,East Arena Shelter,Austin,TX,30.169822,-97.659337,64,357,true,true,true,true,true,true,English|Spanish|Urdu,open
+SHEL-0015,West Church Shelter,Austin,TX,30.091575,-97.84122,400,90,true,true,false,false,true,true,French|Vietnamese,medical_only
+SHEL-0016,Central High School Shelter,Mobile,AL,30.581144,-87.988676,860,121,true,false,false,false,true,true,Vietnamese|Hindi|Arabic,open
+SHEL-0017,Regional Community Center Shelter,Dallas,TX,32.932762,-96.774417,201,315,true,false,false,false,true,true,French|Vietnamese|Tagalog,limited
+SHEL-0018,South Arena Shelter,Austin,TX,30.21642,-97.809847,619,9,true,true,false,true,true,true,Arabic|Hindi|Tagalog,medical_only
+SHEL-0019,West High School Shelter,Dallas,TX,32.855378,-96.861661,777,333,true,false,true,false,true,true,ASL|French|Vietnamese,medical_only
+SHEL-0020,East Civic Center Shelter,Austin,TX,30.274079,-97.595169,501,9,true,false,false,false,true,true,Tagalog|ASL|Spanish|Vietnamese,full
+SHEL-0021,East High School Shelter,Mobile,AL,30.523048,-88.019381,586,232,false,false,false,true,true,true,Tagalog,medical_only
+SHEL-0022,North Arena Shelter,Austin,TX,30.256182,-97.738508,85,180,true,true,true,true,true,true,Vietnamese|ASL,limited
+SHEL-0023,North Arena Shelter,Austin,TX,30.367108,-97.612345,384,32,true,false,false,false,true,true,ASL|Mandarin|French,full
+SHEL-0024,Regional Church Shelter,Dallas,TX,32.644597,-96.753532,284,149,false,true,true,false,true,false,ASL|Tagalog|Spanish|Mandarin,full
+SHEL-0025,North High School Shelter,Mobile,AL,30.85201,-87.951116,157,13,true,true,true,true,true,true,Arabic|English,full
+SHEL-0026,North Clinic Shelter,Baton Rouge,LA,30.38402,-91.198818,507,318,true,true,true,false,true,true,Tagalog|ASL|Spanish,medical_only
+SHEL-0027,Regional Clinic Shelter,Mobile,AL,30.646606,-88.181067,177,340,false,false,false,false,true,false,Arabic|English|Vietnamese|Tagalog,medical_only
+SHEL-0028,South Civic Center Shelter,Jackson,MS,32.200005,-90.04646,621,347,false,true,false,false,true,true,English|Spanish|Urdu|Hindi,full
+SHEL-0029,Regional Clinic Shelter,San Antonio,TX,29.471787,-98.463201,865,329,true,false,true,false,true,false,French|Mandarin|Vietnamese|Hindi,open
+SHEL-0030,Regional Clinic Shelter,San Antonio,TX,29.508923,-98.507462,359,184,false,true,false,false,true,false,ASL|Spanish|Vietnamese,open
+SHEL-0031,Regional Arena Shelter,Dallas,TX,32.897355,-96.849107,777,222,true,false,false,true,true,false,Hindi|ASL,limited
+SHEL-0032,Community Clinic Shelter,Houston,TX,29.885014,-95.541326,483,310,false,false,true,false,true,false,ASL|French|Spanish|English,full
+SHEL-0033,East Clinic Shelter,San Antonio,TX,29.56984,-98.338784,629,327,true,true,false,false,true,false,Tagalog|Spanish,open
+SHEL-0034,Regional Church Shelter,San Antonio,TX,29.312751,-98.61114,422,130,false,false,false,true,true,false,Tagalog|Vietnamese|Hindi|Arabic,limited
+SHEL-0035,East Community Center Shelter,Mobile,AL,30.855345,-88.134851,75,185,true,true,false,false,true,false,French|Tagalog|ASL,full
+SHEL-0036,East Church Shelter,San Antonio,TX,29.494028,-98.385228,143,193,true,false,false,false,true,true,French|ASL|Urdu,full
+SHEL-0037,West Clinic Shelter,New Orleans,LA,30.116809,-90.242507,204,75,true,false,false,false,true,false,Mandarin|Urdu|Tagalog|Arabic,medical_only
+SHEL-0038,North Community Center Shelter,Mobile,AL,30.569774,-88.001627,761,331,false,true,true,true,true,true,Hindi|Mandarin,open
+SHEL-0039,East Arena Shelter,Dallas,TX,32.726827,-96.716927,601,125,false,false,true,false,true,false,French|Tagalog|ASL|English,limited
+SHEL-0040,North Civic Center Shelter,Baton Rouge,LA,30.438915,-91.276273,622,45,true,false,false,false,true,false,French,open
+SHEL-0041,West Church Shelter,Mobile,AL,30.648654,-88.131352,544,346,true,false,true,true,true,false,Urdu|English|Spanish|Hindi,medical_only
+SHEL-0042,Central Clinic Shelter,Jackson,MS,32.259399,-90.347663,654,218,true,true,true,false,true,false,English|Vietnamese|ASL,limited
+SHEL-0043,West Civic Center Shelter,San Antonio,TX,29.273746,-98.359604,98,65,false,true,true,false,true,true,ASL|Urdu,medical_only
+SHEL-0044,East Arena Shelter,Mobile,AL,30.801009,-88.120569,112,296,true,true,false,false,true,true,Vietnamese,limited
+SHEL-0045,North Civic Center Shelter,Houston,TX,29.732085,-95.465168,606,160,true,true,false,false,true,false,Spanish|Vietnamese|Urdu|French,medical_only
+SHEL-0046,South Arena Shelter,Dallas,TX,32.772648,-96.894499,667,403,true,false,false,false,true,false,Spanish|ASL|Hindi|Mandarin,full
+SHEL-0047,Regional Arena Shelter,Mobile,AL,30.602927,-87.860593,598,217,true,true,true,true,true,true,Hindi|Tagalog|Arabic|French,open
+SHEL-0048,North Community Center Shelter,Jackson,MS,32.210085,-90.119022,400,350,true,false,false,true,true,true,ASL|Mandarin|Spanish,limited
+SHEL-0049,East Community Center Shelter,San Antonio,TX,29.582232,-98.378342,63,147,true,false,false,true,true,false,Vietnamese|ASL|French|English,limited
+SHEL-0050,Regional Civic Center Shelter,Dallas,TX,32.739576,-96.792829,547,42,false,false,false,false,true,false,Vietnamese|Tagalog|French,full
+SHEL-0051,North Community Center Shelter,Austin,TX,30.385071,-97.699041,502,107,true,true,true,false,true,false,Spanish|Tagalog,full
+SHEL-0052,Community Civic Center Shelter,New Orleans,LA,30.015768,-90.009554,731,212,false,false,true,true,true,true,Vietnamese,full
+SHEL-0053,West Arena Shelter,Mobile,AL,30.712054,-88.109749,794,218,true,false,false,false,true,false,Tagalog|Spanish,open
+SHEL-0054,North Community Center Shelter,Houston,TX,29.93975,-95.329071,539,142,true,false,true,true,true,false,Hindi|Arabic|Mandarin,full
+SHEL-0055,Regional High School Shelter,Austin,TX,30.443332,-97.613113,292,20,true,true,false,true,true,true,Arabic|English|Hindi|Tagalog,full
+SHEL-0056,North Civic Center Shelter,Jackson,MS,32.127781,-90.206919,271,376,true,false,true,false,true,false,Arabic,medical_only
+SHEL-0057,North Arena Shelter,Jackson,MS,32.405766,-90.268144,354,286,true,false,true,false,true,true,Urdu|Mandarin|ASL|Tagalog,medical_only
+SHEL-0058,West Clinic Shelter,Baton Rouge,LA,30.389914,-91.13793,133,253,true,true,true,false,true,true,Urdu|Tagalog,limited
+SHEL-0059,North Arena Shelter,Austin,TX,30.233667,-97.677423,291,159,true,true,false,false,true,true,French,limited
+SHEL-0060,West Arena Shelter,New Orleans,LA,29.842972,-90.192653,61,173,true,false,false,true,true,false,Tagalog|French|Arabic|Spanish,full
+SHEL-0061,Regional Arena Shelter,Houston,TX,29.655807,-95.384034,366,125,true,false,true,false,true,true,Spanish|Mandarin|Hindi,open
+SHEL-0062,South Civic Center Shelter,San Antonio,TX,29.278069,-98.488506,169,176,false,true,false,false,true,true,Vietnamese|Mandarin|ASL,full
+SHEL-0063,Community Civic Center Shelter,Mobile,AL,30.862912,-87.98107,392,359,false,false,false,true,true,true,French,limited
+SHEL-0064,South Clinic Shelter,Austin,TX,30.356766,-97.7384,772,319,false,false,false,true,true,false,English|Urdu|Arabic|Tagalog,medical_only
+SHEL-0065,Community Church Shelter,Houston,TX,29.627588,-95.230276,209,32,true,true,true,true,true,false,Hindi|Arabic|Spanish,open
+SHEL-0066,Community Church Shelter,San Antonio,TX,29.595377,-98.325956,226,252,true,false,false,true,true,true,Spanish,open
+SHEL-0067,Central Clinic Shelter,Austin,TX,30.331365,-97.613317,735,124,true,true,true,false,true,false,Arabic|ASL|Mandarin,open
+SHEL-0068,Central Clinic Shelter,San Antonio,TX,29.542133,-98.416817,598,375,true,true,true,false,true,true,Hindi,full
+SHEL-0069,Regional Community Center Shelter,Jackson,MS,32.226496,-90.211212,594,378,true,true,false,true,true,false,French|Mandarin|Vietnamese|Tagalog,medical_only
+SHEL-0070,Community Civic Center Shelter,Jackson,MS,32.473689,-90.204915,143,245,true,false,true,true,true,true,Spanish,medical_only
+SHEL-0071,Regional High School Shelter,Baton Rouge,LA,30.596214,-91.287591,624,25,false,true,true,true,true,true,Hindi|Tagalog|Urdu|English,medical_only
+SHEL-0072,West Community Center Shelter,Mobile,AL,30.626147,-88.129696,699,366,true,true,false,false,true,true,Arabic|Vietnamese,open
+SHEL-0073,Community Arena Shelter,Mobile,AL,30.776997,-88.03427,169,4,false,true,true,true,true,true,Hindi|Mandarin|Vietnamese|Urdu,full
+SHEL-0074,South Church Shelter,Dallas,TX,32.859511,-96.764551,479,291,true,false,true,true,true,true,Tagalog|Hindi|ASL,open
+SHEL-0075,West High School Shelter,New Orleans,LA,29.933243,-89.952288,384,72,false,true,true,false,true,false,Hindi|Tagalog,limited
+SHEL-0076,Regional High School Shelter,Baton Rouge,LA,30.559071,-91.062809,360,350,false,true,false,true,true,true,Tagalog,full
+SHEL-0077,Community Clinic Shelter,New Orleans,LA,29.807982,-89.972972,207,301,true,true,false,true,true,false,English,open
+SHEL-0078,South Civic Center Shelter,San Antonio,TX,29.506491,-98.419221,65,153,false,false,false,false,true,false,English|Tagalog|Mandarin|Vietnamese,limited
+SHEL-0079,Regional Civic Center Shelter,Baton Rouge,LA,30.337909,-91.300685,758,57,true,true,true,false,true,true,English|French,open
+SHEL-0080,Central Civic Center Shelter,Mobile,AL,30.736019,-87.881998,716,187,false,false,false,false,true,false,Arabic|Spanish,limited
+SHEL-0081,South High School Shelter,New Orleans,LA,30.051031,-89.970376,593,68,true,true,true,false,true,true,Vietnamese|Spanish|English|Tagalog,open
+SHEL-0082,Regional High School Shelter,Austin,TX,30.393449,-97.910985,597,118,false,true,false,false,true,true,Urdu,open
+SHEL-0083,Central Church Shelter,Dallas,TX,32.763253,-96.780266,771,58,false,true,false,true,true,true,Tagalog|English|Vietnamese,medical_only
+SHEL-0084,North Church Shelter,Baton Rouge,LA,30.472324,-91.279313,129,249,true,true,true,false,true,true,Hindi|ASL|Spanish|Mandarin,limited
+SHEL-0085,West Church Shelter,Austin,TX,30.121671,-97.715482,469,143,false,true,true,true,true,true,French|Urdu|Spanish,limited
+SHEL-0086,West Church Shelter,Mobile,AL,30.715292,-88.104233,825,283,true,false,false,false,true,true,Spanish|Tagalog,full
+SHEL-0087,Central Civic Center Shelter,Jackson,MS,32.435191,-90.278188,227,109,true,true,true,true,true,false,Spanish|Arabic,medical_only
+SHEL-0088,North Church Shelter,Dallas,TX,32.916009,-96.652985,784,44,true,true,false,false,true,true,ASL|English,medical_only
+SHEL-0089,Regional Church Shelter,Mobile,AL,30.594875,-88.084069,530,81,false,false,true,true,true,false,Mandarin|Tagalog|Urdu,medical_only
+SHEL-0090,East High School Shelter,Baton Rouge,LA,30.356242,-91.093746,507,301,false,true,false,true,true,false,Spanish|Vietnamese|Hindi|Urdu,full
+SHEL-0091,East Church Shelter,Mobile,AL,30.772884,-87.94051,436,36,false,false,false,false,true,true,Vietnamese|Tagalog|French,medical_only
+SHEL-0092,West Community Center Shelter,Dallas,TX,32.926438,-96.709381,778,330,true,false,false,false,true,true,English|Hindi|ASL,limited
+SHEL-0093,Central Church Shelter,Dallas,TX,32.614853,-96.64778,740,164,true,false,false,false,true,false,Spanish,medical_only
+SHEL-0094,Community Clinic Shelter,Dallas,TX,32.784226,-96.649222,757,78,true,false,false,true,true,true,ASL|Mandarin|Hindi|Urdu,medical_only
+SHEL-0095,West Civic Center Shelter,Mobile,AL,30.647627,-88.155073,61,165,true,false,true,true,true,true,Arabic|Urdu|Mandarin,open
+SHEL-0096,East Civic Center Shelter,Dallas,TX,32.859958,-96.676901,311,90,true,false,false,true,true,true,Tagalog|Hindi|Mandarin,limited
+SHEL-0097,South High School Shelter,Dallas,TX,32.823324,-96.641994,688,331,true,false,false,false,true,true,Spanish,medical_only
+SHEL-0098,Central Community Center Shelter,Jackson,MS,32.457505,-90.28113,271,253,false,false,true,false,true,true,ASL|Hindi|English|Vietnamese,medical_only
+SHEL-0099,Community Church Shelter,New Orleans,LA,30.059217,-90.175637,306,393,true,true,false,true,true,false,Urdu|Arabic|Spanish,medical_only
+SHEL-0100,Regional Arena Shelter,Jackson,MS,32.423196,-90.220514,806,82,true,false,false,true,true,true,French|Hindi,medical_only
+SHEL-0101,West High School Shelter,Jackson,MS,32.274601,-90.231014,587,179,false,false,false,false,true,true,Mandarin,limited
+SHEL-0102,East High School Shelter,Austin,TX,30.17126,-97.791974,882,16,false,true,false,false,true,true,English|Vietnamese|French|Hindi,open
+SHEL-0103,Regional Civic Center Shelter,Dallas,TX,32.63711,-96.961729,460,67,true,true,true,true,true,true,English|French,limited
+SHEL-0104,Central High School Shelter,Jackson,MS,32.243073,-90.036167,91,420,false,false,false,false,true,false,Urdu|Vietnamese|English,open
+SHEL-0105,South Community Center Shelter,Jackson,MS,32.327835,-90.040868,709,371,true,true,false,true,true,true,Tagalog|Spanish|Arabic|Urdu,open
+SHEL-0106,Regional Arena Shelter,Dallas,TX,32.622369,-96.643065,290,411,false,false,false,false,true,false,Hindi|Tagalog|Urdu|Arabic,open
+SHEL-0107,Community Civic Center Shelter,Austin,TX,30.410022,-97.804702,683,176,false,false,false,false,true,false,French|English,open
+SHEL-0108,South High School Shelter,Mobile,AL,30.61931,-88.184529,448,0,false,false,false,false,true,true,ASL,medical_only
+SHEL-0109,Community Civic Center Shelter,New Orleans,LA,29.983055,-90.030182,633,124,true,true,true,false,true,false,English|French,limited
+SHEL-0110,South Clinic Shelter,Dallas,TX,32.604994,-96.898704,290,166,false,true,false,true,true,true,ASL|Spanish|French,medical_only
+SHEL-0111,East Clinic Shelter,Dallas,TX,32.930929,-96.643437,566,242,false,false,true,false,true,true,Mandarin|French|English,medical_only
+SHEL-0112,Community Community Center Shelter,Austin,TX,30.308969,-97.831411,170,279,true,false,false,false,true,true,Spanish|Arabic|French,open
+SHEL-0113,Central Civic Center Shelter,New Orleans,LA,30.131044,-89.918274,526,141,true,false,false,true,true,false,ASL|Arabic|Mandarin,limited
+SHEL-0114,Regional Church Shelter,Jackson,MS,32.260185,-90.149947,847,226,true,false,false,false,true,true,Arabic|English,full
+SHEL-0115,Community Arena Shelter,Houston,TX,29.80036,-95.223285,591,164,true,false,true,true,true,true,Tagalog|Hindi,open
+SHEL-0116,North Clinic Shelter,Mobile,AL,30.829167,-87.911583,782,369,false,false,false,true,true,true,Urdu|Hindi,medical_only
+SHEL-0117,South Civic Center Shelter,San Antonio,TX,29.33051,-98.535551,845,262,false,false,false,true,true,false,Mandarin|Hindi|French|Tagalog,open
+SHEL-0118,North Civic Center Shelter,Mobile,AL,30.556067,-87.878394,176,113,true,false,true,false,true,true,French,limited
+SHEL-0119,Central Arena Shelter,Dallas,TX,32.825459,-96.743897,635,205,false,false,false,false,true,false,Arabic,full
+SHEL-0120,East Church Shelter,Mobile,AL,30.543133,-87.900793,780,417,true,false,false,false,true,false,Tagalog|French|Spanish,limited
+SHEL-0121,East Arena Shelter,Mobile,AL,30.656528,-88.153281,200,417,true,true,false,true,true,true,Tagalog|Spanish,full
+SHEL-0122,East High School Shelter,Dallas,TX,32.818103,-96.881694,445,137,false,true,true,false,true,false,Mandarin|Urdu,limited
+SHEL-0123,Regional Arena Shelter,Austin,TX,30.252969,-97.570494,794,62,false,false,false,true,true,false,Mandarin|Tagalog|French|Hindi,open
+SHEL-0124,East Church Shelter,Mobile,AL,30.874999,-88.0866,777,349,true,true,false,false,true,true,Urdu|Vietnamese,limited
+SHEL-0125,Community Community Center Shelter,Jackson,MS,32.409243,-90.206537,665,390,true,false,false,false,true,false,Tagalog,medical_only
+SHEL-0126,West Clinic Shelter,Baton Rouge,LA,30.576266,-91.197918,822,304,true,false,true,false,true,false,Vietnamese|Tagalog|Hindi|ASL,open
+SHEL-0127,South Civic Center Shelter,Dallas,TX,32.953219,-96.928521,376,321,false,false,true,false,true,true,Spanish|Mandarin|ASL|English,limited
+SHEL-0128,North Arena Shelter,Jackson,MS,32.200061,-90.091299,480,121,true,true,true,false,true,false,English|Urdu,limited
+SHEL-0129,West Clinic Shelter,San Antonio,TX,29.355975,-98.334068,769,11,true,false,false,true,true,true,Urdu|Spanish,medical_only
+SHEL-0130,Regional Civic Center Shelter,Baton Rouge,LA,30.524812,-91.132264,391,253,true,false,false,false,true,false,English,medical_only
+SHEL-0131,North Church Shelter,Jackson,MS,32.436301,-90.32223,116,66,false,false,true,false,true,false,Hindi|ASL|Mandarin,limited
+SHEL-0132,East Community Center Shelter,Houston,TX,29.930524,-95.543715,170,127,true,false,false,false,true,true,Tagalog|Spanish|English,full
+SHEL-0133,West Community Center Shelter,Houston,TX,29.869331,-95.236707,722,57,false,false,false,true,true,false,Tagalog|Vietnamese|Hindi|Mandarin,open
+SHEL-0134,Regional High School Shelter,New Orleans,LA,29.935254,-89.93798,429,277,true,false,false,false,true,true,Arabic|Hindi,open
+SHEL-0135,South High School Shelter,Dallas,TX,32.861094,-96.668681,378,358,false,false,true,true,true,false,Tagalog|Spanish|Arabic,limited
+SHEL-0136,Central Arena Shelter,Dallas,TX,32.814911,-96.617052,234,111,true,false,true,false,true,true,Urdu|English|ASL|Spanish,medical_only
+SHEL-0137,Community Civic Center Shelter,San Antonio,TX,29.33733,-98.652174,435,230,true,false,false,true,true,true,Arabic|Hindi,open
+SHEL-0138,Central Church Shelter,Austin,TX,30.330768,-97.693844,66,292,false,false,false,false,true,true,Spanish|Arabic,open
+SHEL-0139,Central Church Shelter,Dallas,TX,32.893688,-96.633581,364,126,true,false,true,true,true,true,ASL|Tagalog|Mandarin,open
+SHEL-0140,West Civic Center Shelter,Austin,TX,30.386981,-97.764879,525,163,false,false,false,true,true,true,Spanish|Hindi,full
+SHEL-0141,Community Church Shelter,Austin,TX,30.185043,-97.576697,495,46,false,true,true,false,true,false,Urdu,limited
+SHEL-0142,East Community Center Shelter,Dallas,TX,32.799362,-96.703763,493,395,true,false,true,false,true,true,Mandarin|Urdu|ASL|Hindi,open
+SHEL-0143,Regional Church Shelter,New Orleans,LA,29.988995,-90.228037,314,350,false,true,false,false,true,false,Mandarin,full
+SHEL-0144,Regional Clinic Shelter,New Orleans,LA,29.82532,-89.990284,433,208,false,false,false,true,true,true,ASL|Hindi,full
+SHEL-0145,North Clinic Shelter,Mobile,AL,30.619639,-88.069928,694,2,true,false,false,true,true,true,Spanish|Mandarin,medical_only
+SHEL-0146,Central High School Shelter,Houston,TX,29.78585,-95.431316,568,291,true,true,false,true,true,true,French,full
+SHEL-0147,Community Clinic Shelter,Jackson,MS,32.266759,-90.143149,301,148,true,true,false,false,true,false,ASL,medical_only
+SHEL-0148,West Church Shelter,Mobile,AL,30.714214,-87.898645,405,147,false,false,true,false,true,true,Tagalog|Urdu|French|Hindi,open
+SHEL-0149,Regional Arena Shelter,Jackson,MS,32.341173,-90.05062,549,411,true,true,true,false,true,true,Spanish|Arabic|English|Vietnamese,open
+SHEL-0150,Regional Church Shelter,Austin,TX,30.384197,-97.68727,196,20,false,true,false,true,true,false,Tagalog|French|Arabic,full
+SHEL-0151,East High School Shelter,Dallas,TX,32.683551,-96.692088,199,414,true,false,false,true,true,false,English|Hindi|Mandarin|Spanish,medical_only
+SHEL-0152,Central Clinic Shelter,Baton Rouge,LA,30.318598,-91.317326,215,301,true,true,false,false,true,true,Hindi|English|ASL|French,open
+SHEL-0153,East High School Shelter,Houston,TX,29.924943,-95.355519,185,400,true,false,false,true,true,true,ASL|Tagalog|French|Vietnamese,medical_only
+SHEL-0154,South Civic Center Shelter,Houston,TX,29.684103,-95.384672,165,314,true,true,true,false,true,false,Arabic|Urdu|English,open
+SHEL-0155,North Church Shelter,Jackson,MS,32.468578,-90.053351,518,348,true,false,false,false,true,false,English,full
+SHEL-0156,North Civic Center Shelter,Mobile,AL,30.697585,-87.961147,794,22,true,true,false,false,true,true,Vietnamese|Mandarin|Tagalog,medical_only
+SHEL-0157,Central Church Shelter,San Antonio,TX,29.498334,-98.526214,870,70,true,true,false,true,true,false,Urdu|Tagalog,full
+SHEL-0158,West Clinic Shelter,San Antonio,TX,29.435197,-98.345573,755,245,true,false,false,true,true,true,Vietnamese|Urdu|French|Tagalog,full
+SHEL-0159,South Church Shelter,Jackson,MS,32.242778,-90.359415,717,330,true,true,false,false,true,true,Spanish|Arabic,medical_only
+SHEL-0160,Regional Clinic Shelter,Mobile,AL,30.765936,-87.982788,566,127,true,false,false,false,true,true,French,limited
+SHEL-0161,North Clinic Shelter,Austin,TX,30.132847,-97.618251,419,173,false,false,false,false,true,true,English|Vietnamese,full
+SHEL-0162,Regional Civic Center Shelter,Dallas,TX,32.663266,-96.667116,76,225,true,true,false,false,true,true,Vietnamese|Arabic|French,medical_only
+SHEL-0163,Community Arena Shelter,San Antonio,TX,29.320714,-98.32335,721,102,true,false,false,false,true,false,Arabic|English|Mandarin,open
+SHEL-0164,Central High School Shelter,Baton Rouge,LA,30.537478,-91.270518,507,370,false,true,false,true,true,false,ASL|Hindi|Urdu,limited
+SHEL-0165,Community Arena Shelter,Dallas,TX,32.665231,-96.623083,338,61,false,false,true,false,true,true,Arabic|Hindi,limited
+SHEL-0166,Community Community Center Shelter,New Orleans,LA,30.016795,-89.952225,140,262,true,true,true,false,true,false,English,open
+SHEL-0167,Community Community Center Shelter,Austin,TX,30.199778,-97.705141,331,31,true,true,false,false,true,false,ASL|Urdu,full
+SHEL-0168,Regional Arena Shelter,Dallas,TX,32.648001,-96.84597,289,36,false,true,false,true,true,false,Spanish|Urdu,open
+SHEL-0169,Community Church Shelter,Jackson,MS,32.414865,-90.105865,590,82,true,false,false,false,true,false,Tagalog|Hindi|Vietnamese|Mandarin,medical_only
+SHEL-0170,West Church Shelter,Baton Rouge,LA,30.288018,-91.361702,603,323,false,false,false,false,true,true,Urdu|English,medical_only
+SHEL-0171,Regional Clinic Shelter,Austin,TX,30.238801,-97.91426,675,62,true,true,true,false,true,true,Vietnamese,full
+SHEL-0172,East Arena Shelter,Mobile,AL,30.654617,-88.045856,798,295,true,false,false,false,true,false,French|Vietnamese,full
+SHEL-0173,Central Arena Shelter,New Orleans,LA,29.881726,-90.127964,665,281,true,true,false,true,true,true,French|Urdu|ASL|Tagalog,open
+SHEL-0174,Central High School Shelter,New Orleans,LA,29.9494,-90.00786,329,55,false,true,false,true,true,true,English|Mandarin|Tagalog|Hindi,medical_only
+SHEL-0175,South Arena Shelter,Dallas,TX,32.610029,-96.667036,819,163,false,true,false,false,true,true,ASL|Urdu|English|Vietnamese,medical_only
+SHEL-0176,Community Church Shelter,Jackson,MS,32.242685,-90.306537,814,219,true,false,false,true,true,true,French|Tagalog|Vietnamese,limited
+SHEL-0177,Community Church Shelter,Jackson,MS,32.157776,-90.21208,537,36,false,true,true,false,true,true,Arabic|Mandarin,medical_only
+SHEL-0178,East Community Center Shelter,Jackson,MS,32.381388,-90.030937,518,102,true,false,false,false,true,true,French,full
+SHEL-0179,East Community Center Shelter,Houston,TX,29.607173,-95.404728,766,376,true,true,false,false,true,true,Mandarin|Vietnamese|ASL|Hindi,open
+SHEL-0180,East Community Center Shelter,Austin,TX,30.194692,-97.685289,90,75,true,false,false,false,true,true,Arabic|Hindi,medical_only
+SHEL-0181,Central Civic Center Shelter,Dallas,TX,32.937542,-96.958632,367,284,false,false,false,true,true,true,Tagalog,full
+SHEL-0182,South Civic Center Shelter,Baton Rouge,LA,30.619752,-91.094522,62,71,false,false,false,false,true,true,French|ASL,open
+SHEL-0183,Community Arena Shelter,Baton Rouge,LA,30.391978,-91.065042,681,355,false,false,true,false,true,true,Vietnamese|ASL|Arabic,open
+SHEL-0184,Community Clinic Shelter,Jackson,MS,32.20951,-90.242031,375,419,true,true,false,false,true,true,Spanish|Hindi|Vietnamese|Urdu,medical_only
+SHEL-0185,Community Civic Center Shelter,Mobile,AL,30.744052,-87.997168,899,235,true,true,true,false,true,true,Hindi|Tagalog,full
+SHEL-0186,Regional High School Shelter,Dallas,TX,32.852875,-96.857478,883,283,false,false,false,false,true,false,Spanish,medical_only
+SHEL-0187,East Community Center Shelter,Houston,TX,29.840272,-95.474382,62,184,false,false,true,false,true,true,Arabic|Hindi|ASL|Vietnamese,open
+SHEL-0188,Central Church Shelter,Dallas,TX,32.893172,-96.875772,384,348,true,true,true,false,true,true,French|Urdu|Mandarin,limited
+SHEL-0189,Central Community Center Shelter,New Orleans,LA,29.776751,-90.163921,206,7,false,false,true,false,true,true,Hindi|Urdu,limited
+SHEL-0190,East Arena Shelter,Baton Rouge,LA,30.468438,-91.197,753,21,true,false,false,true,true,true,Mandarin|Hindi|Arabic|Spanish,open
+SHEL-0191,Regional Community Center Shelter,Austin,TX,30.129099,-97.729589,315,328,true,true,false,true,true,true,ASL|Mandarin|English|French,medical_only
+SHEL-0192,South Community Center Shelter,Jackson,MS,32.287779,-90.108713,793,21,true,false,false,true,true,false,Arabic|Urdu|English,full
+SHEL-0193,West Arena Shelter,Dallas,TX,32.811812,-96.668964,520,292,false,true,false,false,true,false,Tagalog,limited
+SHEL-0194,Regional High School Shelter,Jackson,MS,32.161249,-90.254968,295,319,false,false,false,false,true,false,Arabic,open
+SHEL-0195,Community Community Center Shelter,San Antonio,TX,29.260472,-98.555813,78,333,false,true,false,false,true,false,Vietnamese|Mandarin|English,full
+SHEL-0196,West Church Shelter,Jackson,MS,32.447546,-90.070432,85,127,true,false,false,false,true,false,Vietnamese|Arabic|Urdu|Mandarin,medical_only
+SHEL-0197,Central Civic Center Shelter,Dallas,TX,32.931033,-96.946332,266,149,true,true,true,true,true,true,Urdu|English,open
+SHEL-0198,North Arena Shelter,New Orleans,LA,29.786421,-90.032124,182,140,true,false,false,true,true,false,English,open
+SHEL-0199,South Arena Shelter,New Orleans,LA,29.939355,-89.945437,770,53,true,false,true,false,true,true,English|Spanish|Hindi,medical_only
+SHEL-0200,East Church Shelter,Austin,TX,30.112361,-97.788197,806,135,true,true,false,false,true,false,Urdu|Spanish|Vietnamese|English,full
+SHEL-0201,Regional Community Center Shelter,Dallas,TX,32.729734,-96.617592,340,231,true,false,false,true,true,true,English|Spanish,open
+SHEL-0202,East High School Shelter,Austin,TX,30.294381,-97.685655,575,86,true,true,true,false,true,true,Spanish|English|Arabic|Vietnamese,medical_only
+SHEL-0203,Central High School Shelter,Jackson,MS,32.266303,-90.054584,207,266,false,false,false,false,true,true,Hindi|ASL|Arabic|Tagalog,limited
+SHEL-0204,Central Church Shelter,New Orleans,LA,30.026974,-90.069695,206,212,true,false,true,true,true,true,ASL|Arabic|French,open
+SHEL-0205,North Arena Shelter,Austin,TX,30.144816,-97.582472,347,147,true,false,false,false,true,false,Urdu,limited
+SHEL-0206,South Church Shelter,New Orleans,LA,29.974928,-90.05841,738,276,true,false,false,false,true,true,Spanish,open
+SHEL-0207,West Church Shelter,Houston,TX,29.624397,-95.310716,836,202,true,false,true,false,true,true,Urdu,limited
+SHEL-0208,Central Church Shelter,Baton Rouge,LA,30.290526,-91.243598,864,221,true,false,false,false,true,true,Urdu|English|ASL,medical_only
+SHEL-0209,Central Church Shelter,San Antonio,TX,29.535494,-98.530512,81,189,false,true,true,false,true,true,Spanish|ASL|English|Urdu,open
+SHEL-0210,Regional Arena Shelter,San Antonio,TX,29.295919,-98.521748,661,379,false,true,false,false,true,false,Arabic,medical_only
+SHEL-0211,North High School Shelter,Baton Rouge,LA,30.551979,-91.292715,212,295,false,false,true,false,true,true,Tagalog,open
+SHEL-0212,Community Arena Shelter,Austin,TX,30.276579,-97.810367,650,233,true,true,true,true,true,true,Urdu|Mandarin,medical_only
+SHEL-0213,Central Church Shelter,Jackson,MS,32.392861,-90.07508,774,136,true,false,false,false,true,true,Vietnamese|ASL,full
+SHEL-0214,Community Community Center Shelter,Mobile,AL,30.622158,-87.942853,190,230,false,false,true,false,true,true,Arabic,open
+SHEL-0215,West Church Shelter,Baton Rouge,LA,30.315956,-91.05815,626,410,false,true,false,false,true,true,Mandarin|ASL|Spanish,open
+SHEL-0216,East High School Shelter,Dallas,TX,32.749169,-96.708987,137,337,true,false,true,false,true,false,Urdu|Spanish|ASL,limited
+SHEL-0217,Central Civic Center Shelter,New Orleans,LA,30.054319,-90.160758,148,184,true,true,false,true,true,true,Hindi|French|Vietnamese|Spanish,open
+SHEL-0218,Regional Arena Shelter,Houston,TX,29.593312,-95.219634,872,179,false,false,true,true,true,true,French|Arabic|Vietnamese|Tagalog,full
+SHEL-0219,East Church Shelter,Jackson,MS,32.432383,-90.209863,868,251,false,false,true,false,true,true,Hindi|Mandarin|Vietnamese|Tagalog,limited
+SHEL-0220,Community Civic Center Shelter,Austin,TX,30.129039,-97.901837,578,78,true,false,true,true,true,false,Vietnamese|English|ASL|Tagalog,limited
