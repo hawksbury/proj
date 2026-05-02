@@ -116,7 +116,7 @@ export default function ScoringGuide() {
           <div className="guide-levels">
             {LEVELS.map((l) => (
               <div key={l.level} className="guide-level-row">
-                <span className="level-pill" style={{ background: l.color, color: l.level === "medium" ? "#263943" : "#fff" }}>
+                <span className="level-pill" style={{ background: l.color, color: "#fff" }}>
                   {l.level.toUpperCase()}
                 </span>
                 <span className="level-range">{l.range}</span>

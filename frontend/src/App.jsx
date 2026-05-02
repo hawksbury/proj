@@ -10,9 +10,32 @@ import ResponderCaseQueue from "./components/ResponderCaseQueue.jsx";
 import ResponderAnalytics from "./components/ResponderAnalytics.jsx";
 import AlertQueue from "./components/AlertQueue.jsx";
 import LoginPage from "./components/LoginPage.jsx";
+import DispatchModal from "./components/DispatchModal.jsx";
 import { activeCases, responderProfiles as fallbackResponderProfiles } from "./data/responderCases.js";
 
 const DEFAULT_SIGNAL = "SCRBS-0001";
+
+function playAlertSound(level = "medium") {
+  try {
+    const ctx = new AudioContext();
+    const frequencies = { critical: [880, 1100], high: [660, 880], medium: [520], low: [400] };
+    const tones = frequencies[level] ?? frequencies.medium;
+    let t = ctx.currentTime;
+    tones.forEach((freq) => {
+      const osc  = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.type = "sine";
+      osc.frequency.value = freq;
+      gain.gain.setValueAtTime(0.25, t);
+      gain.gain.exponentialRampToValueAtTime(0.001, t + 0.18);
+      osc.start(t);
+      osc.stop(t + 0.18);
+      t += 0.22;
+    });
+  } catch (_) { /* audio blocked before first interaction */ }
+}
 const DEFAULT_INCIDENT = "power_outage";
 
 const modelMetrics = [
@@ -41,15 +64,17 @@ export default function App() {
   const [selectedAlertId, setSelectedAlertId] = useState(null);
   const [newAlertCount, setNewAlertCount] = useState(0);
   const [toast, setToast] = useState(null);
+  const [showDispatchModal, setShowDispatchModal] = useState(false);
   const knownAlertCountRef = useRef(0);
   const toastTimerRef = useRef(null);
 
-  async function loadDispatch(nextSignalId = signalId, nextIncidentType = incidentType) {
+  async function loadDispatch(nextSignalId = signalId, nextIncidentType = incidentType, showModal = false) {
     setLoading(true);
     setError("");
     try {
       const payload = await fetchDispatch(nextSignalId, nextIncidentType, 3);
       setDispatch(payload);
+      if (showModal) setShowDispatchModal(true);
     } catch (requestError) {
       setError(requestError.message);
     } finally {
@@ -96,10 +121,21 @@ export default function App() {
           clearTimeout(toastTimerRef.current);
           setToast(`New alert: ${name}`);
           toastTimerRef.current = setTimeout(() => setToast(null), 4500);
+
+          playAlertSound(newest.priority?.level);
         }
 
-        knownAlertCountRef.current = incoming.length;
-        setAlerts(incoming);
+        if (incoming.length !== knownAlertCountRef.current) {
+          knownAlertCountRef.current = incoming.length;
+          setAlerts(incoming);
+
+          // Auto-run dispatch for the top-priority alert
+          const top = incoming[0];
+          if (top?.customer?.signal_id) {
+            setSignalId(top.customer.signal_id);
+            loadDispatch(top.customer.signal_id, incidentType);
+          }
+        }
       } catch {
         // Backend not running — silently skip
       }
@@ -196,7 +232,7 @@ export default function App() {
         error={error}
         onSignalChange={setSignalId}
         onIncidentChange={setIncidentType}
-        onSubmit={() => loadDispatch()}
+        onSubmit={() => loadDispatch(signalId, incidentType, true)}
       />
 
       <AlertQueue
@@ -233,6 +269,13 @@ export default function App() {
           <span className="alert-toast-dot" />
           {toast}
         </div>
+      )}
+
+      {showDispatchModal && (
+        <DispatchModal
+          dispatch={dispatch}
+          onClose={() => setShowDispatchModal(false)}
+        />
       )}
     </main>
   );

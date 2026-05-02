@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Distress Signal Simulator</title>
+  <style>
+    body { font-family: sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; background: #0f1a20; color: #cde; }
+    h1 { color: #fff; }
+    #addButton { background: #d94f5c; color: #fff; border: none; padding: 14px 32px; font-size: 16px; border-radius: 8px; cursor: pointer; margin-bottom: 16px; }
+    #addButton:hover { background: #b8354a; }
+    #result { color: #7fc; font-size: 14px; margin-bottom: 20px; min-height: 20px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 8px 12px; background: #1e3040; color: #89b4cc; border-bottom: 1px solid #2a4458; }
+    td { padding: 8px 12px; border-bottom: 1px solid #1e3040; }
+    tr:hover td { background: #1a2e3e; }
+  </style>
+</head>
+<body>
+  <h1>Distress Signal Simulator</h1>
+  <p style="color:#89b4cc">Simulates a patient pressing their emergency button. Each press picks a random registry patient and forwards the signal to the dispatch backend.</p>
+
+  <button id="addButton">Send Distress Signal</button>
+  <p id="result"></p>
+
+  <h2 style="color:#89b4cc;font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:.08em">Signal Log</h2>
+  <table>
+    <thead>
+      <tr><th>Time</th><th>Signal ID</th><th>Latitude</th><th>Longitude</th></tr>
+    </thead>
+    <tbody id="recordsBody"></tbody>
+  </table>
+
+  <script>
+    async function loadRecords() {
+      const rows = await fetch("/get-rows").then(r => r.json());
+      const tbody = document.getElementById("recordsBody");
+      tbody.innerHTML = [...rows].reverse().map(row =>
+        `<tr><td>${row.received_time}</td><td>${row.person_id}</td><td>${row.latitude}</td><td>${row.longitude}</td></tr>`
+      ).join("");
+    }
+
+    window.onload = loadRecords;
+
+    document.getElementById("addButton").addEventListener("click", async () => {
+      const btn = document.getElementById("addButton");
+      btn.disabled = true;
+      btn.textContent = "Sending…";
+      try {
+        const data = await fetch("/add-row", { method: "POST" }).then(r => r.json());
+        document.getElementById("result").textContent =
+          data.enriched
+            ? `Signal sent — ${data.enriched.customer?.full_name || data.enriched.person_id} · score ${data.enriched.priority?.score ?? "—"}`
+            : `Signal sent — ${data.row.split("\t")[1]}`;
+        loadRecords();
+      } finally {
+        btn.disabled = false;
+        btn.textContent = "Send Distress Signal";
+      }
+    });
+  </script>
+</body>
+</html>

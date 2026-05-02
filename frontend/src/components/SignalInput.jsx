@@ -30,7 +30,7 @@ export default function SignalInput({
           <input
             value={signalId}
             onChange={(event) => onSignalChange(event.target.value)}
-            placeholder="SIG-0000001"
+            placeholder="SCRBS-0001"
           />
         </label>
         <label>

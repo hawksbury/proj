@@ -120,8 +120,10 @@ Collapsible documentation inside the live queue explains:
 
 ```
 buttonapi/          ← Express.js alert simulator (port 3001)
-  server.js         ← POST /api/button → writes to data.csv, forwards to backend
+  server.js         ← POST /add-row (browser) · GET /api/button (Pico)
+  public/index.html ← Browser-based signal simulator UI
   data.csv          ← Append-only distress log
+  pico/main.py      ← MicroPython for Raspberry Pi Pico W
 
 backend/            ← Node.js HTTP API (port 4000)
   server.js         ← Routes, CORS, JSON parsing
@@ -197,11 +199,22 @@ npm install
 npm run dev                   # Opens on http://127.0.0.1:5173
 ```
 
-### 5. Demo the live flow
+### 5. (Optional) Flash the Raspberry Pi Pico W
+
+The Pico replaces the Google Sheets trigger with a direct call to the local server.
+
+1. Open `buttonapi/pico/main.py` in Thonny
+2. Set `WIFI_SSID`, `WIFI_PASSWORD`, and `SERVER_IP` (your machine's LAN IP — run `ipconfig` on Windows)
+3. Flash the file to the Pico as `main.py`
+4. When the Pico boots and connects to WiFi, pressing the physical button sends `GET /api/button` to the local buttonapi — identical to clicking the browser button
+
+The Pico signals the server over your local network; no Google account or internet required.
+
+### 6. Demo the live flow
 
 - Visit `http://127.0.0.1:5173` and log in as any responder
-- In a separate tab, open `http://localhost:3001` and press the button
-- Watch the priority queue on the dashboard receive and rank the new alert in real time
+- Open `http://localhost:3001` in a second tab (or press the physical Pico button)
+- Watch the priority queue receive and rank the new alert in real time with FLIP animation
 - Click any alert row to expand the full responder brief
 - Use the signal input to load a full ML dispatch for any `SCRBS-XXXX` ID
 

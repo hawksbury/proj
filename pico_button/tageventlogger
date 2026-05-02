@@ -1,0 +1,49 @@
+const SHEET_NAME = "Events";
+
+function doGet(e) {
+  try {
+    const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_NAME);
+
+    const person_id = e.parameter.person_id;
+    const latitude = e.parameter.latitude;
+    const longitude = e.parameter.longitude;
+    const device_time = e.parameter.device_time;
+
+    // If URL has parameters, save an event
+    if (person_id && latitude && longitude && device_time) {
+      sheet.appendRow([
+        new Date(),
+        person_id,
+        latitude,
+        longitude,
+        device_time
+      ]);
+
+      return ContentService
+        .createTextOutput("success")
+        .setMimeType(ContentService.MimeType.TEXT);
+    }
+
+    // If no parameters, return all events
+    const values = sheet.getDataRange().getValues();
+    const headers = values[0];
+    const rows = values.slice(1);
+
+    const data = rows.map(row => {
+      let obj = {};
+      headers.forEach((header, index) => {
+        obj[header] = row[index];
+      });
+      return obj;
+    });
+
+    return ContentService
+      .createTextOutput(JSON.stringify(data))
+      .setMimeType(ContentService.MimeType.JSON);
+
+  } catch (error) {
+    return ContentService
+      .createTextOutput("error: " + error.toString())
+      .setMimeType(ContentService.MimeType.TEXT);
+  }
+}
