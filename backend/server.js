@@ -7,6 +7,7 @@ import { fileURLToPath } from "node:url";
 import { handleDispatchCreate, handleDispatchPreview } from "./routes/dispatchRoutes.js";
 import { handleResponderList } from "./routes/responderRoutes.js";
 import { handleSignalEvent, handleSignalLookup } from "./routes/signalRoutes.js";
+import { handleAlertCreate, handleAlertList } from "./routes/alertRoutes.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 loadEnvFile(resolve(__dirname, ".env"));
@@ -21,6 +22,8 @@ const routes = [
   ["GET", /^\/api\/responders$/, handleResponderList],
   ["POST", /^\/api\/dispatch$/, handleDispatchCreate],
   ["GET", /^\/api\/dispatch\/([^/]+)$/, handleDispatchPreview, ["signal_id"]],
+  ["POST", /^\/api\/alert$/, handleAlertCreate],
+  ["GET", /^\/api\/alerts$/, handleAlertList],
 ];
 
 const server = createServer(async (request, response) => {

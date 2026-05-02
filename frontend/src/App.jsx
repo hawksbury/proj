@@ -1,16 +1,18 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { fetchDispatch } from "./api/dispatchApi.js";
 import { fetchResponders } from "./api/responderApi.js";
+import { fetchAlerts } from "./api/alertApi.js";
 import SignalInput from "./components/SignalInput.jsx";
 import PriorityDashboard from "./components/PriorityDashboard.jsx";
 import DispatchSummary from "./components/DispatchSummary.jsx";
 import ResponderLogin from "./components/ResponderLogin.jsx";
 import ResponderCaseQueue from "./components/ResponderCaseQueue.jsx";
 import ResponderAnalytics from "./components/ResponderAnalytics.jsx";
+import AlertQueue from "./components/AlertQueue.jsx";
 import LoginPage from "./components/LoginPage.jsx";
 import { activeCases, responderProfiles as fallbackResponderProfiles } from "./data/responderCases.js";
 
-const DEFAULT_SIGNAL = "SIG-0000001";
+const DEFAULT_SIGNAL = "SCRBS-0001";
 const DEFAULT_INCIDENT = "power_outage";
 
 const modelMetrics = [
@@ -33,6 +35,14 @@ export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(
     () => window.localStorage.getItem("ai-dispatch-responder-id") !== null,
   );
+
+  // Alert queue state
+  const [alerts, setAlerts] = useState([]);
+  const [selectedAlertId, setSelectedAlertId] = useState(null);
+  const [newAlertCount, setNewAlertCount] = useState(0);
+  const [toast, setToast] = useState(null);
+  const knownAlertCountRef = useRef(0);
+  const toastTimerRef = useRef(null);
 
   async function loadDispatch(nextSignalId = signalId, nextIncidentType = incidentType) {
     setLoading(true);
@@ -70,6 +80,40 @@ export default function App() {
     loadResponders();
   }, []);
 
+  // Poll for new button alerts every 5 seconds
+  useEffect(() => {
+    async function pollAlerts() {
+      try {
+        const { alerts: incoming } = await fetchAlerts();
+        const prevCount = knownAlertCountRef.current;
+
+        if (incoming.length > prevCount) {
+          const numNew = incoming.length - prevCount;
+          const newest = incoming[0];
+          const name = newest.customer?.full_name || newest.person_id;
+
+          setNewAlertCount((n) => n + numNew);
+
+          clearTimeout(toastTimerRef.current);
+          setToast(`New alert: ${name}`);
+          toastTimerRef.current = setTimeout(() => setToast(null), 4500);
+        }
+
+        knownAlertCountRef.current = incoming.length;
+        setAlerts(incoming);
+      } catch {
+        // Backend not running — silently skip
+      }
+    }
+
+    pollAlerts();
+    const interval = setInterval(pollAlerts, 3000);
+    return () => {
+      clearInterval(interval);
+      clearTimeout(toastTimerRef.current);
+    };
+  }, []);
+
   const selectedResponder = useMemo(
     () => responderProfiles.find((responder) => responder.responder_id === selectedResponderId) || responderProfiles[0],
     [selectedResponderId],
@@ -90,6 +134,16 @@ export default function App() {
     setSignalId(caseItem.signal_id);
     setIncidentType(caseItem.incident_type);
     loadDispatch(caseItem.signal_id, caseItem.incident_type);
+  }
+
+  function handleAlertSelect(alert) {
+    setSelectedAlertId(alert.alert_id);
+    setNewAlertCount(0);
+    if (alert.customer?.signal_id) {
+      const sid = alert.customer.signal_id;
+      setSignalId(sid);
+      loadDispatch(sid, incidentType);
+    }
   }
 
   function handleLogin(nextResponderId = selectedResponderId) {
@@ -123,6 +177,9 @@ export default function App() {
           <h1>Responder Operations Dashboard</h1>
         </div>
         <div className="status-cluster">
+          {newAlertCount > 0 && (
+            <span className="alert-badge">{newAlertCount}</span>
+          )}
           <span className="status-dot" />
           <span>{dispatch?.dispatch_summary?.mode === "openai_responses_api" ? "OpenAI LLM" : "Local Fallback"}</span>
           <button className="text-action" type="button" onClick={handleLogout}>
@@ -143,6 +200,12 @@ export default function App() {
         onSignalChange={setSignalId}
         onIncidentChange={setIncidentType}
         onSubmit={() => loadDispatch()}
+      />
+
+      <AlertQueue
+        alerts={alerts}
+        onSelectAlert={handleAlertSelect}
+        selectedAlertId={selectedAlertId}
       />
 
       <section className="kpi-grid">
@@ -166,6 +229,13 @@ export default function App() {
         <PriorityDashboard dispatch={dispatch} modelMetrics={modelMetrics} />
         <DispatchSummary summary={dispatch?.dispatch_summary} />
       </section>
+
+      {toast && (
+        <div className="alert-toast">
+          <span className="alert-toast-dot" />
+          {toast}
+        </div>
+      )}
     </main>
   );
 }

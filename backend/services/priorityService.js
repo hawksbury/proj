@@ -5,11 +5,12 @@ import { fileURLToPath } from "node:url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const backendDir = resolve(__dirname, "..");
 const projectRoot = resolve(backendDir, "..");
+const pythonExecutable = resolve(projectRoot, ".venv", "Scripts", "python.exe");
 
 export function predictDispatch(signalId, { incidentType = "power_outage", limit = 5 } = {}) {
   return new Promise((resolvePromise, reject) => {
     const child = spawn(
-      "python3",
+      pythonExecutable,
       [
         resolve(backendDir, "ml/predict_dispatch.py"),
         signalId,

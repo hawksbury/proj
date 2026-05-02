@@ -39,7 +39,7 @@ export const responderProfiles = [
 
 export const activeCases = [
   {
-    signal_id: "SIG-0000001",
+    signal_id: "SCRBS-0001",
     customer_id: "CUST-000001",
     name: "Priya Chen",
     age: 12,
@@ -55,7 +55,7 @@ export const activeCases = [
     hover: "Child with COPD and oxygen dependence during power outage. Needs transfer help and accessible transport planning.",
   },
   {
-    signal_id: "SIG-0000420",
+    signal_id: "SCRBS-0420",
     customer_id: "CUST-000420",
     name: "Rafael Santos",
     age: 81,
@@ -71,7 +71,7 @@ export const activeCases = [
     hover: "Older adult living alone with cardiac risk and limited mobility during extreme heat.",
   },
   {
-    signal_id: "SIG-0003668",
+    signal_id: "SCRBS-3668",
     customer_id: "CUST-003668",
     name: "Maya Nguyen",
     age: 44,
@@ -87,7 +87,7 @@ export const activeCases = [
     hover: "Respiratory condition near chemical incident. Needs fast assessment and medication continuity check.",
   },
   {
-    signal_id: "SIG-0001150",
+    signal_id: "SCRBS-1150",
     customer_id: "CUST-001150",
     name: "Amir Khan",
     age: 67,
@@ -103,7 +103,7 @@ export const activeCases = [
     hover: "Non-ambulatory customer in flood zone. Best match is accessible evacuation transport.",
   },
   {
-    signal_id: "SIG-0002112",
+    signal_id: "SCRBS-2112",
     customer_id: "CUST-002112",
     name: "Grace Wilson",
     age: 29,
@@ -119,7 +119,7 @@ export const activeCases = [
     hover: "Customer requires ASL/text communication and diabetes medication access verification.",
   },
   {
-    signal_id: "SIG-0003188",
+    signal_id: "SCRBS-3188",
     customer_id: "CUST-003188",
     name: "Elena Garcia",
     age: 58,
