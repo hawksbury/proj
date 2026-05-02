@@ -45,6 +45,7 @@ Hackathon project for receiving a device `signal_id`, matching it to a disabled 
 - `data/disaster_zones.csv`: Simulated disaster context such as incident type, severity, power outage, road access, and cell service.
 - `data/shelters.csv`: Synthetic shelter capacity and accessibility-resource data.
 - `data/historical_cases.csv`: Synthetic training/testing data for urgency prediction, escalation prediction, and responder profession prediction.
+- `data/incoming_signals.csv`: Example schema for a real-time disaster signal stream. Tracks repeated signals, source gateway, device health, queue status, processing result, and assignment.
 - `data/schema_notes.json`: Machine-readable notes about the intended lookup, prediction, and matching flow.
 - `data/README.md`: Explanation of the synthetic data files and how they support the backend/ML flow.
 - `scripts/generate_fake_data.mjs`: Recreates all synthetic CSV files with repeatable fake data.
@@ -58,7 +59,6 @@ Hackathon project for receiving a device `signal_id`, matching it to a disabled 
 - `frontend/src/api/dispatchApi.js`: API client for calling the backend dispatch endpoint.
 - `frontend/src/data/responderCases.js`: Frontend demo case queue and responder profiles. This gives UI teammates a safe place to change dashboard demo content before a full backend queue endpoint exists.
 - `frontend/src/components/LoginPage.jsx`: First screen of the app. Uses stored fake responder profiles as login options and opens the responder-specific dashboard.
-- `frontend/src/components/SignalInput.jsx`: Controls for entering `signal_id`, selecting incident type, and running the dispatch flow.
 - `frontend/src/components/ResponderLogin.jsx`: Responder workspace selector. Simulates responder login and filters the dashboard to that responder's profession/capabilities.
 - `frontend/src/components/ResponderAnalytics.jsx`: Analytics widget for cases relevant to the logged-in responder, including critical case counts and incident-type bars.
 - `frontend/src/components/ResponderCaseQueue.jsx`: Top-three relevant people list. Hovering a case reveals key medical/accessibility details in a popover.
@@ -111,6 +111,9 @@ Useful API routes:
 - `GET /health`
 - `POST /api/signals` with `{ "signal_id": "SIG-0000001", "incident_type": "power_outage" }`
 - `GET /api/signals/SIG-0000001`
+- `POST /api/signal-events`
+- `GET /api/signal-events`
+- `POST /api/signal-events/:event_id/process`
 - `GET /api/responders`
 - `POST /api/dispatch` with `{ "signal_id": "SIG-0000001", "incident_type": "power_outage", "limit": 3 }`
 - `GET /api/dispatch/SIG-0000001?incident_type=power_outage&limit=3`

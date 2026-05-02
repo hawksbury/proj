@@ -1,0 +1,2 @@
+event_id,signal_id,customer_id,incident_type,first_received_at,last_seen_at,signal_count,source_gateway,device_latitude,device_longitude,battery_level,signal_strength,status,processed_at,priority_score,escalation_required,assigned_responder_id
+EVT-000001,SIG-0000001,CUST-000001,power_outage,2026-05-02T10:00:00Z,2026-05-02T10:08:00Z,6,GATEWAY-DALLAS-01,32.607441,-97.057669,62,weak,active,,,, 

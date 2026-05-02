@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { fetchDispatch } from "./api/dispatchApi.js";
 import { fetchResponders } from "./api/responderApi.js";
-import SignalInput from "./components/SignalInput.jsx";
 import PriorityDashboard from "./components/PriorityDashboard.jsx";
 import DispatchSummary from "./components/DispatchSummary.jsx";
 import ResponderLogin from "./components/ResponderLogin.jsx";
@@ -27,12 +26,8 @@ export default function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [responderProfiles, setResponderProfiles] = useState(fallbackResponderProfiles);
-  const [selectedResponderId, setSelectedResponderId] = useState(
-    () => window.localStorage.getItem("ai-dispatch-responder-id") || fallbackResponderProfiles[0].responder_id,
-  );
-  const [isLoggedIn, setIsLoggedIn] = useState(
-    () => window.localStorage.getItem("ai-dispatch-responder-id") !== null,
-  );
+  const [selectedResponderId, setSelectedResponderId] = useState(fallbackResponderProfiles[0].responder_id);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   async function loadDispatch(nextSignalId = signalId, nextIncidentType = incidentType) {
     setLoading(true);
@@ -57,8 +52,7 @@ export default function App() {
         const responders = await fetchResponders();
         if (responders.length) {
           setResponderProfiles(responders);
-          const savedResponderId = window.localStorage.getItem("ai-dispatch-responder-id");
-          if (!savedResponderId || !responders.some((responder) => responder.responder_id === savedResponderId)) {
+          if (!responders.some((responder) => responder.responder_id === selectedResponderId)) {
             setSelectedResponderId(responders[0].responder_id);
           }
         }
@@ -68,7 +62,7 @@ export default function App() {
     }
 
     loadResponders();
-  }, []);
+  }, [selectedResponderId]);
 
   const selectedResponder = useMemo(
     () => responderProfiles.find((responder) => responder.responder_id === selectedResponderId) || responderProfiles[0],
@@ -93,13 +87,11 @@ export default function App() {
   }
 
   function handleLogin(nextResponderId = selectedResponderId) {
-    window.localStorage.setItem("ai-dispatch-responder-id", nextResponderId);
     setSelectedResponderId(nextResponderId);
     setIsLoggedIn(true);
   }
 
   function handleLogout() {
-    window.localStorage.removeItem("ai-dispatch-responder-id");
     setIsLoggedIn(false);
   }
 
@@ -134,16 +126,7 @@ export default function App() {
       <ResponderLogin
         responder={selectedResponder}
       />
-
-      <SignalInput
-        signalId={signalId}
-        incidentType={incidentType}
-        loading={loading}
-        error={error}
-        onSignalChange={setSignalId}
-        onIncidentChange={setIncidentType}
-        onSubmit={() => loadDispatch()}
-      />
+      {error ? <p className="dashboard-error">{error}</p> : null}
 
       <section className="kpi-grid">
         {dashboardStats.map((stat) => (
@@ -162,6 +145,7 @@ export default function App() {
           cases={relevantCases}
           selectedCaseId={signalId}
           onSelectCase={handleCaseSelect}
+          loading={loading}
         />
         <PriorityDashboard dispatch={dispatch} modelMetrics={modelMetrics} />
         <DispatchSummary summary={dispatch?.dispatch_summary} />
