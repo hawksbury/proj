@@ -1,4 +1,4 @@
-export default function ResponderCaseQueue({ cases, selectedCaseId, onSelectCase }) {
+export default function ResponderCaseQueue({ cases, selectedCaseId, onSelectCase, loading }) {
   const topCases = cases.slice(0, 3);
 
   return (
@@ -29,6 +29,7 @@ export default function ResponderCaseQueue({ cases, selectedCaseId, onSelectCase
             <div className="case-score">
               <strong>{caseItem.priority_score.toFixed(1)}</strong>
               <span>{caseItem.distance_miles} mi</span>
+              {selectedCaseId === caseItem.signal_id && loading ? <em>loading</em> : null}
             </div>
             <aside className="case-popover">
               <strong>{caseItem.customer_id}</strong>

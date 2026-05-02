@@ -8,6 +8,11 @@ export async function handleDispatchCreate(request, response, context) {
   const incidentType = context.body?.incident_type || "power_outage";
   const limit = Number(context.body?.limit || 5);
 
+  const result = await runDispatchFlow({ signalId, incidentType, limit });
+  response.status(201).json(result);
+}
+
+export async function runDispatchFlow({ signalId, incidentType = "power_outage", limit = 5 }) {
   const signalEvent = await buildSignalEvent(signalId, incidentType);
   const mlResult = await predictDispatch(signalId, { incidentType, limit });
   const responderOptions = await getResponderOptions(mlResult, limit);
@@ -17,13 +22,13 @@ export async function handleDispatchCreate(request, response, context) {
     responderOptions,
   });
 
-  response.status(201).json({
+  return {
     signal: signalEvent,
     prediction: mlResult.prediction,
     customer: signalEvent.customer,
     responder_options: responderOptions,
     dispatch_summary: dispatchSummary,
-  });
+  };
 }
 
 export async function handleDispatchPreview(request, response, context) {

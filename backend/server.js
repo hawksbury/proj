@@ -6,6 +6,11 @@ import { fileURLToPath } from "node:url";
 
 import { handleDispatchCreate, handleDispatchPreview } from "./routes/dispatchRoutes.js";
 import { handleResponderList } from "./routes/responderRoutes.js";
+import {
+  handleSignalIngest,
+  handleSignalQueueList,
+  handleSignalQueueProcess,
+} from "./routes/signalQueueRoutes.js";
 import { handleSignalEvent, handleSignalLookup } from "./routes/signalRoutes.js";
 import { handleAlertCreate, handleAlertList } from "./routes/alertRoutes.js";
 
@@ -19,6 +24,9 @@ const routes = [
   ["GET", /^\/health$/, health],
   ["POST", /^\/api\/signals$/, handleSignalEvent],
   ["GET", /^\/api\/signals\/([^/]+)$/, handleSignalLookup, ["signal_id"]],
+  ["POST", /^\/api\/signal-events$/, handleSignalIngest],
+  ["GET", /^\/api\/signal-events$/, handleSignalQueueList],
+  ["POST", /^\/api\/signal-events\/([^/]+)\/process$/, handleSignalQueueProcess, ["event_id"]],
   ["GET", /^\/api\/responders$/, handleResponderList],
   ["POST", /^\/api\/dispatch$/, handleDispatchCreate],
   ["GET", /^\/api\/dispatch\/([^/]+)$/, handleDispatchPreview, ["signal_id"]],

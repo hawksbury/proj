@@ -67,8 +67,7 @@ export default function App() {
         const responders = await fetchResponders();
         if (responders.length) {
           setResponderProfiles(responders);
-          const savedResponderId = window.localStorage.getItem("ai-dispatch-responder-id");
-          if (!savedResponderId || !responders.some((responder) => responder.responder_id === savedResponderId)) {
+          if (!responders.some((responder) => responder.responder_id === selectedResponderId)) {
             setSelectedResponderId(responders[0].responder_id);
           }
         }
@@ -147,13 +146,11 @@ export default function App() {
   }
 
   function handleLogin(nextResponderId = selectedResponderId) {
-    window.localStorage.setItem("ai-dispatch-responder-id", nextResponderId);
     setSelectedResponderId(nextResponderId);
     setIsLoggedIn(true);
   }
 
   function handleLogout() {
-    window.localStorage.removeItem("ai-dispatch-responder-id");
     setIsLoggedIn(false);
   }
 
@@ -225,6 +222,7 @@ export default function App() {
           cases={relevantCases}
           selectedCaseId={signalId}
           onSelectCase={handleCaseSelect}
+          loading={loading}
         />
         <PriorityDashboard dispatch={dispatch} modelMetrics={modelMetrics} />
         <DispatchSummary summary={dispatch?.dispatch_summary} />

@@ -276,6 +276,15 @@ button:disabled {
   font-weight: 800;
 }
 
+.dashboard-error {
+  margin-top: 12px;
+  padding: 12px 14px;
+  background: #fff2f3;
+  color: #c84451;
+  border-left: 5px solid #c84451;
+  font-weight: 800;
+}
+
 .responder-login {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -551,6 +560,16 @@ button:disabled {
 .case-score span {
   color: #647883;
   font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.case-score em {
+  display: block;
+  margin-top: 6px;
+  color: #35bea7;
+  font-size: 11px;
+  font-style: normal;
   font-weight: 900;
   text-transform: uppercase;
 }

@@ -20,6 +20,7 @@ prioritizes help plus recommends matching first responders.
 - `disaster_zones.csv`: 180 simulated disaster/context zones.
 - `shelters.csv`: 220 shelters with capacity and accessibility resources.
 - `historical_cases.csv`: 20,000 historical synthetic cases for model training/testing.
+- `incoming_signals.csv`: Example live-signal queue schema for real disaster ingestion, deduplication, processing, and assignment tracking.
 - `schema_notes.json`: Machine-readable notes about the intended lookup and modeling flow.
 
 ## Suggested AI/ML Setup

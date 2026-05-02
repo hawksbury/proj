@@ -27,6 +27,9 @@ If `OPENAI_API_KEY` is not set, the backend uses a local mock summary so the dem
 - `GET /api/alerts`: return the current live queue sorted by priority score (max 50 alerts).
 - `POST /api/signals`: receive a device signal and create a timestamped signal event.
 - `GET /api/signals/:signal_id`: look up the customer connected to a device signal.
+- `POST /api/signal-events`: ingest a real-time signal into a deduplicated queue.
+- `GET /api/signal-events`: list queued/active/prioritized signal events.
+- `POST /api/signal-events/:event_id/process`: process one queued signal through ML, responder matching, and LLM summary.
 - `GET /api/responders`: list responder profiles for frontend login.
 - `POST /api/dispatch`: run the full ML dispatch flow.
 - `GET /api/dispatch/:signal_id`: quick demo route for the full dispatch flow.
